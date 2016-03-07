@@ -1,2 +1,2 @@
 language: java
-build: ./activator clean compile
+script: sbt clean compile
