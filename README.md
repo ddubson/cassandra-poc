@@ -1,5 +1,7 @@
 Proof-of-Concept for Apache Cassandra
 
+[![Build Status](https://travis-ci.org/ddubson/cassandra-poc.svg?branch=master)](https://travis-ci.org/ddubson/cassandra-poc)
+
 # Premise
 
 Movie listing app that lets you view/list movies, search for movies, add movies, favorite movies, rate movies, etc.
