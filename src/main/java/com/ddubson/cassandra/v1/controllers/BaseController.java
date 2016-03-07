@@ -31,6 +31,7 @@ public class BaseController {
 			update.body = row.getString("body");
 			updates.add(update);
 		});
+
 		return updates;
 	}
 }

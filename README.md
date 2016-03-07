@@ -12,3 +12,6 @@ Movie listing app that lets you view/list movies, search for movies, add movies,
 5. Spring Data Cassandra (TBD)
 6. AngularJS
 7. Twitter Bootstrap
+
+# Running Instructions
+
