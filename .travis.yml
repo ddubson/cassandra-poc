@@ -1,2 +1,3 @@
 language: java
-script: sbt clean compile
+jdk: oraclejdk8
+script: ./activator clean compile
