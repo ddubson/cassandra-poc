@@ -15,9 +15,12 @@ libraryDependencies ++= Seq(
   "org.springframework.boot" % "spring-boot-starter-web" % "1.3.2.RELEASE",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.2",
   "com.fasterxml.jackson.core" % "jackson-core" % "2.6.2",
-  "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.2"
+  "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.2",
+  "org.springframework.data" % "spring-data-cassandra" % "1.3.4.RELEASE"
 )
 
 dependencyOverrides +="com.fasterxml.jackson.core" % "jackson-databind" % "2.6.2"
 dependencyOverrides += "com.fasterxml.jackson.core" % "jackson-core" % "2.6.2"
 dependencyOverrides += "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.2"
+dependencyOverrides += "org.springframework" % "spring-context" % "4.2.4.RELEASE"
+dependencyOverrides += "com.datastax.cassandra" % "cassandra-driver-core" % "3.0.0"
