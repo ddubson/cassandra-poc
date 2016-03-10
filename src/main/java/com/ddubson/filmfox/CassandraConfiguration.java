@@ -14,9 +14,9 @@ import org.springframework.data.cassandra.repository.config.EnableCassandraRepos
  * Created by ddubson on 1/23/16.
  */
 @Configuration
-@PropertySource("classpath:config.properties")
+@PropertySource("classpath:application.properties")
 @EnableCassandraRepositories(
-        basePackages = "com.ddubson.cassandra.v1.repositories")
+        basePackages = "com.ddubson.filmfox.repositories")
 public class CassandraConfiguration extends AbstractCassandraConfiguration {
     @Value("${cassandra.host}")
 	String host;
