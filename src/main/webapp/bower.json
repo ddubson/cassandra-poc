@@ -1,0 +1,23 @@
+{
+  "name": "cassandra-poc",
+  "homepage": "https://github.com/ddubson/cassandra-poc",
+  "authors": [
+    "Dmitriy Dubson <d.dubson@gmail.com>"
+  ],
+  "dependencies" : {
+    "bootstrap" : "3.3.6",
+    "jquery" : "2.2.1"
+  },
+  "description": "PoC for Apache Cassandra",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
