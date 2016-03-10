@@ -1,7 +1,7 @@
-package com.ddubson.cassandra.v1.controllers;
+package com.ddubson.filmfox.controllers;
 
-import com.ddubson.cassandra.v1.models.Movie;
-import com.ddubson.cassandra.v1.repositories.MovieRepository;
+import com.ddubson.filmfox.models.Movie;
+import com.ddubson.filmfox.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

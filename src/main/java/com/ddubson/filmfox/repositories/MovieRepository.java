@@ -1,6 +1,6 @@
-package com.ddubson.cassandra.v1.repositories;
+package com.ddubson.filmfox.repositories;
 
-import com.ddubson.cassandra.v1.models.Movie;
+import com.ddubson.filmfox.models.Movie;
 import org.springframework.data.cassandra.repository.CassandraRepository;
 import org.springframework.stereotype.Repository;
 

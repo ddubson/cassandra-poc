@@ -1,4 +1,4 @@
-package com.ddubson.cassandra.v1;
+package com.ddubson.filmfox;
 
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;

@@ -1,4 +1,4 @@
-package com.ddubson.cassandra.v1;
+package com.ddubson.filmfox;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

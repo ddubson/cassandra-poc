@@ -1,4 +1,4 @@
-package com.ddubson.cassandra.v1.models;
+package com.ddubson.filmfox.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.cassandra.core.Ordering;

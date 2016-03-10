@@ -1,4 +1,4 @@
-package com.ddubson.cassandra.v1;
+package com.ddubson.filmfox;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;

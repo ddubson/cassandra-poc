@@ -1,10 +1,12 @@
-name := """cassandra-poc"""
+name := """film-fox"""
 
-version := "1.0"
+version := "1.0-alpha"
+
+organization := "com.ddubson"
 
 scalaVersion := "2.11.6"
 
-mainClass in Compile := Some("com.ddubson.cassandra.v1.Application")
+mainClass in Compile := Some("com.ddubson.filmfox.Application")
 
 libraryDependencies ++= Seq(
   "junit"             % "junit"           % "4.12"  % "test",
