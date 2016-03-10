@@ -10,6 +10,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         // Forward root to webapp/index.html
-        registry.addViewController("/").setViewName("forward:/index.html");
+        registry.addViewController("/").setViewName("/index.html");
     }
 }

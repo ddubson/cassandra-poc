@@ -10,11 +10,20 @@
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet" type="text/css">
 </head>
 <body ng-app="app" ng-controller="HomeController">
-<div class="navbar navbar-default navbar-fixed-top top-navbar">
-    <div class="container app-container">
-        <div class="navbar-header">
-            <h1>{{ title }}</h1>
+<div class="container">
+    <div class="navbar top-navbar">
+        <div class="container app-container">
+            <div class="navbar-header">
+                <h1>{{ title }}</h1>
+            </div>
         </div>
+    </div>
+    <div class="row">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="movie in movies">
+                <p>{{movie.name}}, {{movie['directed-by']}}, Released: {{movie['year-released']}}</p>
+            </li>
+        </ul>
     </div>
 </div>
 <script src="bower_components/angularjs/angular.min.js"></script>

@@ -1,4 +1,8 @@
 angular.module('HomeViewModule').controller('HomeController',
-    function($scope) {
-       $scope.title = "Hello World!";
-    });
+    function($scope, $http) {
+       $scope.title = "Movies!";
+
+       $http.get("/movies").success(function(response) {
+             $scope.movies = response;
+       });
+});
