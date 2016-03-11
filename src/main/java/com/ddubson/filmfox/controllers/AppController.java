@@ -4,13 +4,13 @@ import com.datastax.driver.core.utils.UUIDs;
 import com.ddubson.filmfox.models.Movie;
 import com.ddubson.filmfox.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.cassandra.repository.MapId;
+import org.springframework.data.cassandra.repository.support.BasicMapId;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by ddubson on 1/23/16.
@@ -26,6 +26,13 @@ public class AppController {
         List<Movie> movieList = new ArrayList<>();
         movies.forEach(movieList::add);
         return movieList;
+    }
+
+    @RequestMapping(value = "/movies/{id}", method = RequestMethod.GET)
+    public Movie getMovieById(@PathVariable("id") UUID id) {
+        MapId mapId = new BasicMapId();
+        mapId.with("id", id);
+        return movieRepository.findOne(mapId);
     }
 
     @RequestMapping(value = "/movies", method = RequestMethod.POST)
