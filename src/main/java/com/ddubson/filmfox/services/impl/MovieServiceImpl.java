@@ -23,9 +23,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public Movie getMovieById(UUID id) {
-        MapId mapId = new BasicMapId();
-        mapId.with("id", id);
-        return movieRepository.findOne(mapId);
+        return movieRepository.findOne(createMapId(id));
     }
 
     @Override
@@ -33,5 +31,11 @@ public class MovieServiceImpl implements MovieService {
         Movie movie = movieBuilder.create();
         movie.setId(UUIDs.timeBased());
         return movieRepository.save(movie);
+    }
+
+    protected MapId createMapId(UUID id) {
+        MapId mapId = new BasicMapId();
+        mapId.with("id", id);
+        return mapId;
     }
 }
