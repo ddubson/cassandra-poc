@@ -7,11 +7,11 @@ CREATE KEYSPACE "movies_keyspace"
 use movies_keyspace;
 
 CREATE TABLE "movies" (
+    "id" timeuuid,
 	"name" text,
-	"id" timeuuid,
 	"year_released" text,
 	"directed_by" text,
-	PRIMARY KEY ("name", "id")
+	PRIMARY KEY ("id", "name")
 );
 
 INSERT INTO "movies" ("name", "id", "year_released", "directed_by")

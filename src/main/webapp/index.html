@@ -11,19 +11,22 @@
 </head>
 <body ng-app="app" ng-controller="HomeController">
 <div class="container">
-    <div class="navbar top-navbar">
+    <div class="navbar">
         <div class="container app-container">
             <div class="navbar-header">
                 <h1>{{ title }}</h1>
             </div>
         </div>
     </div>
-    <div class="row">
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="movie in movies">
-                <p>{{movie.name}}, {{movie['directed-by']}}, Released: {{movie['year-released']}}</p>
-            </li>
-        </ul>
+    <div class="col-lg-4">
+        <div class="list-group">
+            <ul class="list-group-item" ng-repeat="movie in movies">
+                <p class="list-group-item-heading">{{movie.name}} ({{movie['year-released']}}) : {{ movie.id }}</p>
+            </ul>
+        </div>
+        <div>
+            <p>Movie Summary: {{ movieDetails.name }} (Directed By: {{ movieDetails['directed-by']}}</p>
+        </div>
     </div>
 </div>
 <script src="bower_components/angularjs/angular.min.js"></script>
