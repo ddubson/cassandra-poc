@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet" type="text/css">
 </head>
 <body ng-app="app" ng-controller="HomeController">
@@ -18,19 +19,26 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-4">
-        <div class="list-group">
-            <ul class="list-group-item" ng-repeat="movie in movies">
-                <p class="list-group-item-heading">{{movie.name}} ({{movie['year-released']}}) : {{ movie.id }}</p>
-            </ul>
+    <div class="panel panel-default" ng-repeat="movie in movies">
+        <div class="panel-heading">
+            <div class="panel-title">
+                {{movie.name}} ({{movie['year-released']}})
+            </div>
         </div>
-        <div>
-            <p>Movie Summary: {{ movieDetails.name }} (Directed By: {{ movieDetails['directed-by']}}</p>
+        <div class="panel-body">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" width="330" height="220" src="https://www.youtube.com/embed/s7EdQ4FqbhY"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="panel-footer">
+            id: {{movie.id}}
         </div>
     </div>
 </div>
 <script src="bower_components/angularjs/angular.min.js"></script>
 <script src="js/app.js"></script>
+
 <script src="js/HomeViewModule/HomeController.js"></script>
 </body>
 </html>
