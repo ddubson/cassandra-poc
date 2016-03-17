@@ -9,9 +9,6 @@ import org.springframework.data.cassandra.mapping.BasicCassandraMappingContext;
 import org.springframework.data.cassandra.mapping.CassandraMappingContext;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
-/**
- * Created by ddubson on 1/23/16.
- */
 @Configuration
 @EnableCassandraRepositories(
         basePackages = "com.ddubson.filmfox.repositories")
