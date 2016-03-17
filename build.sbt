@@ -18,6 +18,7 @@ libraryDependencies ++= Seq(
   "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.2",
   "org.springframework.data" % "spring-data-cassandra" % "1.3.4.RELEASE",
   "ch.qos.logback" % "logback-classic" % "1.1.6",
+  "org.elasticsearch" % "elasticsearch" % "2.2.1",
 
   // Test Libraries
   "junit"             % "junit"           % "4.12"  % "test",
