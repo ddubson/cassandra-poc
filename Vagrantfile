@@ -15,6 +15,7 @@ Vagrant.configure(2) do |config|
 
   # Apache Cassandra Port Forward
   config.vm.network "forwarded_port", guest: 9042, host: 9042
+  config.vm.network "forwarded_port", guest: 9160, host: 9160
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.

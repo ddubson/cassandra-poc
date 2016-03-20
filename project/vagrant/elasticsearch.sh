@@ -10,6 +10,7 @@ sudo echo "network.bind_host: 0" >> /etc/elasticsearch/elasticsearch.yml
 # Disable node discovery for local environments
 sudo echo "discovery.zen.ping.multicast.enabled: false" >> /etc/elasticsearch/elasticsearch.yml
 sudo echo "discovery.zen.ping.unicast.hosts: [\"127.0.0.1\"]" >> /etc/elasticsearch/elasticsearch.yml
+sudo echo "cluster.name: my-application" >> /etc/elasticsearch/elasticsearch.yml
 
 # Make Daemon executable
 sudo chmod +x /etc/init.d/elasticsearch

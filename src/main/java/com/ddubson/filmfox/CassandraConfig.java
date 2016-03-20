@@ -12,7 +12,7 @@ import org.springframework.data.cassandra.repository.config.EnableCassandraRepos
 @Configuration
 @EnableCassandraRepositories(
         basePackages = "com.ddubson.filmfox.repositories")
-public class CassandraConfiguration extends AbstractCassandraConfiguration {
+public class CassandraConfig extends AbstractCassandraConfiguration {
     @Value("${cassandra.host}")
 	String host;
     @Value("${cassandra.port}")
