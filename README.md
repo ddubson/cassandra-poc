@@ -16,17 +16,17 @@ Movie listing app that lets you view/list movies, search for movies, add movies,
 
 ***
 ### The Stack
-##### Build
+#### Build
 * SBT 0.13.11
 * Vagrant 1.8.1
-##### Container
+#### Container
 * Spring Boot 1.3.2
-##### Dependency Injection
+#### Dependency Injection
 * Spring Framework 4.2.4
-##### Data Persistence
+#### Data Persistence
 * Apache Cassandra 2.2.5 (Spring Data Cassandra 1.3.4)
 * Elasticsearch 2.2.1 (Native Java Client)
-##### Front End
+#### Front End
 * Bower
 * AngularJS 1.5.0
 * Twitter Bootstrap 3.3.6
