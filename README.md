@@ -1,6 +1,7 @@
 FilmFox - a film tracking and rating application.
 
 [![Build Status](https://travis-ci.org/ddubson/film-fox.svg?branch=master)](https://travis-ci.org/ddubson/film-fox)
+[![Code Climate](https://codeclimate.com/github/ddubson/film-fox/badges/gpa.svg)](https://codeclimate.com/github/ddubson/film-fox)
 
 # Premise
 
