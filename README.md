@@ -14,13 +14,19 @@ Movie listing app that lets you view/list movies, search for movies, add movies,
 ### Development environment setup
 - Run Vagrant included in this repository to set up a single-node Elasticsearch and Cassandra instance cluster
 
-### Technologies used
-1. SBT 0.13.11
-2. Spring Boot 1.3.2
-3. Spring Framework 4.2.4
-4. Apache Cassandra (Cassandra v2.2.5, DataStax driver v2.1.9)
-5. Spring Data Cassandra 1.3.4
-6. AngularJS 1.5.0
-7. Twitter Bootstrap 3.3.6
-8. Elasticsearch 2.2.1
-9. Vagrant 1.8.1
+***
+### The Stack
+##### Build
+* SBT 0.13.11
+* Vagrant 1.8.1
+##### Container
+* Spring Boot 1.3.2
+##### Dependency Injection
+* Spring Framework 4.2.4
+##### Data Persistence
+* Apache Cassandra 2.2.5 (Spring Data Cassandra 1.3.4)
+* Elasticsearch 2.2.1 (Native Java Client)
+##### Front End
+* Bower
+* AngularJS 1.5.0
+* Twitter Bootstrap 3.3.6
