@@ -12,9 +12,7 @@ Movie listing app that lets you view/list movies, search for movies, add movies,
 2. Start App by running: **sbt clean run** (You can also use built in Typesafe activator as an alternative)
 
 ### Development environment setup
-- Apache Cassandra
-    1. Get latest Docker
-    2. Execute "docker build ." which builds the Docker image from Dockerfile
+- Run Vagrant included in this repository to set up a single-node Elasticsearch and Cassandra instance cluster
 
 ### Technologies used
 1. SBT 0.13.11
@@ -25,3 +23,4 @@ Movie listing app that lets you view/list movies, search for movies, add movies,
 6. AngularJS 1.5.0
 7. Twitter Bootstrap 3.3.6
 8. Elasticsearch 2.2.1
+9. Vagrant 1.8.1

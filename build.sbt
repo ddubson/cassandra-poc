@@ -1,11 +1,7 @@
 name := """film-fox"""
-
 version := "1.0-alpha"
-
 organization := "com.ddubson"
-
 scalaVersion := "2.11.6"
-
 mainClass in Compile := Some("com.ddubson.filmfox.Application")
 
 libraryDependencies ++= Seq(
@@ -27,9 +23,11 @@ libraryDependencies ++= Seq(
   "org.hamcrest"      % "hamcrest-core"   % "1.3" % "test"
 )
 
-dependencyOverrides +="com.fasterxml.jackson.core" % "jackson-databind" % "2.6.2"
-dependencyOverrides += "com.fasterxml.jackson.core" % "jackson-core" % "2.6.2"
-dependencyOverrides += "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.2"
-dependencyOverrides += "org.springframework" % "spring-context" % "4.2.4.RELEASE"
-dependencyOverrides += "com.datastax.cassandra" % "cassandra-driver-core" % "2.1.9"
-dependencyOverrides += "ch.qos.logback" % "logback-classic" % "1.1.6"
+dependencyOverrides ++= Set(
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.2",
+  "com.fasterxml.jackson.core" % "jackson-core" % "2.6.2",
+  "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.2",
+  "org.springframework" % "spring-context" % "4.2.4.RELEASE",
+  "com.datastax.cassandra" % "cassandra-driver-core" % "2.1.9",
+  "ch.qos.logback" % "logback-classic" % "1.1.6"
+)
