@@ -1,6 +1,6 @@
 angular.module('HomeViewModule').controller('HomeController',
     function($scope, $http) {
-       $scope.title = "Movies!";
+       $scope.title = "FilmFox - find your film.";
 
        // Get all movie summaries
        $http.get("/movies").success(function(response) {
