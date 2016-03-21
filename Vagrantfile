@@ -41,5 +41,6 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell", path: "project/vagrant/jdk.sh"
+  config.vm.provision "shell", path: "project/vagrant/cassandra.sh"
   config.vm.provision "shell", path: "project/vagrant/elasticsearch.sh"
 end

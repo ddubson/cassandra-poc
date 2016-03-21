@@ -11,5 +11,8 @@ sudo gpg --keyserver pgp.mit.edu --recv-keys 0353B12C
 sudo gpg --export --armor 0353B12C | sudo apt-key add -
 
 sudo apt-get update
+sudo apt-get install -y cassandra
 
-sudo apt-get -y install cassandra
+sudo sed -i 's/CMD_PATT="Dcassandra-pidfile=.*cassandra\.pid"/CMD_PATT="cassandra"/g' /etc/init.d/cassandra
+sudo update-rc.d cassandra defaults 95 10
+sudo service cassandra start
