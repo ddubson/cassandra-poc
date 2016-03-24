@@ -1,5 +1,0 @@
-site_name: FilmFox Docs
-theme: simplex
-pages:
-- Home: index.md
-- Tech Stack: tech-stack.md
