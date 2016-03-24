@@ -24,6 +24,9 @@ public class Movie {
     @Column("directed_by")
     @JsonProperty("directed-by")
     String directedBy;
+    @Column("trailer_link")
+    @JsonProperty("trailer-link")
+    String trailerLink;
 
     public String getName() {
         return name;
@@ -51,6 +54,14 @@ public class Movie {
 
     public String getDirectedBy() {
         return directedBy;
+    }
+
+    public String getTrailerLink() {
+        return trailerLink;
+    }
+
+    public void setTrailerLink(String trailerLink) {
+        this.trailerLink = trailerLink;
     }
 
     public void setDirectedBy(String directedBy) {
