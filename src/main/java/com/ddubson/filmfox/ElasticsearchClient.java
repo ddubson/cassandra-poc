@@ -9,6 +9,9 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class ElasticsearchClient {
+    public final static String MOVIES_INDEX = "movies";
+    public final static String MOVIES_TYPE = "movie";
+
     @Autowired
     Logger sysLog;
     Client elasticClient;
@@ -25,5 +28,13 @@ public class ElasticsearchClient {
         }
 
         sysLog.info("Elasticsearch connection closed.");
+    }
+
+    public Client getElasticClient() {
+        return elasticClient;
+    }
+
+    public void setElasticClient(Client elasticClient) {
+        this.elasticClient = elasticClient;
     }
 }

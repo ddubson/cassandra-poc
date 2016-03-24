@@ -1,8 +1,13 @@
 package com.ddubson.filmfox.controllers;
 
+import com.ddubson.filmfox.ElasticsearchClient;
 import com.ddubson.filmfox.models.Movie;
 import com.ddubson.filmfox.models.MovieBuilder;
 import com.ddubson.filmfox.services.MovieService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.index.IndexResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +18,12 @@ import java.util.UUID;
 public class AppController {
     @Autowired
     MovieService movieService;
+
+    @Autowired
+    ObjectMapper json;
+
+    @Autowired
+    ElasticsearchClient elasticsearchClient;
 
     @RequestMapping(value = "/movies", method = RequestMethod.GET)
     public List<Movie> listMovies() {
@@ -31,5 +42,19 @@ public class AppController {
                 .directedBy(movieJson.getDirectedBy())
                 .yearReleased(movieJson.getYearReleased());
         return movieService.addMovie(movieBuilder);
+    }
+
+    @RequestMapping(value = "/sync", method = RequestMethod.GET)
+    public IndexResponse sync() throws JsonProcessingException {
+        IndexRequest indexRequest = new IndexRequest();
+
+        Movie m = movieService.getMovieSummaries().get(0);
+        IndexResponse r = elasticsearchClient.getElasticClient().prepareIndex(
+                ElasticsearchClient.MOVIES_INDEX,
+                ElasticsearchClient.MOVIES_TYPE,
+                m.getId().toString())
+                .setSource(json.writeValueAsBytes(m)).get();
+
+        return r;
     }
 }
