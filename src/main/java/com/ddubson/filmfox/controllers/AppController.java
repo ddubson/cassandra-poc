@@ -3,7 +3,7 @@ package com.ddubson.filmfox.controllers;
 import com.ddubson.filmfox.ElasticsearchClient;
 import com.ddubson.filmfox.models.Movie;
 import com.ddubson.filmfox.models.MovieBuilder;
-import com.ddubson.filmfox.services.MovieService;
+import com.ddubson.filmfox.services.movie.MovieService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.elasticsearch.action.index.IndexRequest;

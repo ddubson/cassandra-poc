@@ -1,4 +1,4 @@
-package com.ddubson.filmfox.services;
+package com.ddubson.filmfox.services.movie;
 
 import com.ddubson.filmfox.models.Movie;
 import com.ddubson.filmfox.models.MovieBuilder;

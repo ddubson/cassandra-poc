@@ -1,10 +1,10 @@
-package com.ddubson.filmfox.services.impl;
+package com.ddubson.filmfox.services.movie.impl;
 
 import com.datastax.driver.core.utils.UUIDs;
 import com.ddubson.filmfox.models.Movie;
 import com.ddubson.filmfox.models.MovieBuilder;
 import com.ddubson.filmfox.repositories.MovieRepository;
-import com.ddubson.filmfox.services.MovieService;
+import com.ddubson.filmfox.services.movie.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.cassandra.repository.MapId;
 import org.springframework.data.cassandra.repository.support.BasicMapId;

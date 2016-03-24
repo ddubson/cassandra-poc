@@ -1,18 +1,21 @@
 package com.ddubson.filmfox;
 
-import com.ddubson.filmfox.services.MovieService;
-import com.ddubson.filmfox.services.impl.MovieServiceImpl;
+import com.ddubson.filmfox.services.movie.MovieService;
+import com.ddubson.filmfox.services.movie.impl.MovieServiceImpl;
+import com.ddubson.filmfox.services.sync.IndexingService;
+import com.ddubson.filmfox.services.sync.impl.IndexingServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-/**
- * Created by ddubson on 3/7/16.
- */
 @Configuration
+@EnableAsync
+@EnableScheduling
 public class ApplicationConfig {
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
@@ -32,5 +35,10 @@ public class ApplicationConfig {
     @Bean
     public Logger sysLog() {
         return LoggerFactory.getLogger("com.ddubson.filmfox.system");
+    }
+
+    @Bean
+    public IndexingService indexingService() {
+        return new IndexingServiceImpl();
     }
 }
