@@ -1,0 +1,24 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "FilmFox Documentation\n\n\nThis page is a stub for the upcoming docs describing the app FilmFox", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#filmfox-documentation", 
+            "text": "This page is a stub for the upcoming docs describing the app FilmFox", 
+            "title": "FilmFox Documentation"
+        }, 
+        {
+            "location": "/tech-stack/", 
+            "text": "Tech Stack", 
+            "title": "Tech Stack"
+        }, 
+        {
+            "location": "/tech-stack/#tech-stack", 
+            "text": "", 
+            "title": "Tech Stack"
+        }
+    ]
+}
