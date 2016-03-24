@@ -8,6 +8,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.search.SearchType;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +20,9 @@ import java.util.UUID;
 
 @RestController
 public class AppController {
+    @Autowired
+    Logger sysLog;
+
     @Autowired
     MovieService movieService;
 
@@ -56,5 +63,18 @@ public class AppController {
                 .setSource(json.writeValueAsBytes(m)).get();
 
         return r;
+    }
+
+    @RequestMapping(value = "/movies/search", method = RequestMethod.POST)
+    public SearchResponse search(@RequestBody String movieName) {
+        SearchResponse searchResponse = elasticsearchClient.getElasticClient()
+                .prepareSearch(ElasticsearchClient.MOVIES_INDEX)
+                .setTypes(ElasticsearchClient.MOVIES_TYPE)
+                .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+                .setQuery(QueryBuilders.queryStringQuery(movieName))
+                .execute().actionGet();
+
+        sysLog.info(movieName);
+        return searchResponse;
     }
 }
