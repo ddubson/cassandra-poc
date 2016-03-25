@@ -2,6 +2,7 @@ name := """film-fox"""
 version := "1.0-alpha"
 organization := "com.ddubson"
 scalaVersion := "2.11.6"
+javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint")
 mainClass in Compile := Some("com.ddubson.filmfox.Application")
 
 libraryDependencies ++= Seq(

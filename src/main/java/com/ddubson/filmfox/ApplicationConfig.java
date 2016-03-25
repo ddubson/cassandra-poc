@@ -17,6 +17,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableAsync
 @EnableScheduling
 public class ApplicationConfig {
+    public final static String SYSTEM_LOG = "com.ddubson.filmfox.system";
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
@@ -34,7 +35,7 @@ public class ApplicationConfig {
 
     @Bean
     public Logger sysLog() {
-        return LoggerFactory.getLogger("com.ddubson.filmfox.system");
+        return LoggerFactory.getLogger(SYSTEM_LOG);
     }
 
     @Bean
