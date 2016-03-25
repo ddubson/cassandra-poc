@@ -75,6 +75,7 @@ public class AppController {
                 .execute().actionGet();
 
         sysLog.info(movieName);
+
         return searchResponse;
     }
 }
