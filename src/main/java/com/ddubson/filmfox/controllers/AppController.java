@@ -48,7 +48,8 @@ public class AppController {
         MovieBuilder movieBuilder = new MovieBuilder()
                 .movieName(movieJson.getName())
                 .directedBy(movieJson.getDirectedBy())
-                .yearReleased(movieJson.getYearReleased());
+                .yearReleased(movieJson.getYearReleased())
+                .trailerLink(movieJson.getTrailerLink());
         return movieService.addMovie(movieBuilder);
     }
 
