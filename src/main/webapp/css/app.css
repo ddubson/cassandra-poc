@@ -1,0 +1,15 @@
+body {
+    padding-top: 80px;
+}
+
+.navbar-default {
+    background-color: #FFA500;
+}
+
+.panel-body {
+    width: 40em;
+}
+
+.panel-title {
+    cursor: pointer;
+}

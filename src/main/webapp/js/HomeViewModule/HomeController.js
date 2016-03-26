@@ -1,14 +1,13 @@
 angular.module('HomeViewModule').controller('HomeController',
-    function($scope, $http) {
-       $scope.title = "Movies!";
+    function($scope, $http, $sce) {
+       $scope.title = "FilmFox - find your film.";
 
        // Get all movie summaries
        $http.get("/movies").success(function(response) {
+             console.log(response);
+             response.forEach(function(movie) {
+                movie['trailer-link'] = $sce.trustAsResourceUrl(movie['trailer-link']);
+             });
              $scope.movies = response;
-       });
-
-       // Get movie by ID
-       $http.get("/movies/97719c50-e797-11e3-90ce-5f98e903bf02").success(function(response) {
-            $scope.movieDetails = response;
        });
 });

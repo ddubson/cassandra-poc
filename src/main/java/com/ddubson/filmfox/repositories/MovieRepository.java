@@ -12,6 +12,6 @@ import java.util.List;
  */
 @Repository
 public interface MovieRepository extends CassandraRepository<Movie> {
-    @Query("select id, name, year_released from movies")
+    @Query("select id, name, year_released, trailer_link from movies")
     List<Movie> findAllMovieSummaries();
 }

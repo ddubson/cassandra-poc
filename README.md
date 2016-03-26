@@ -1,26 +1,15 @@
-FilmFox - a film tracking and rating application.
+## FilmFox - find your film.
 
 [![Build Status](https://travis-ci.org/ddubson/film-fox.svg?branch=master)](https://travis-ci.org/ddubson/film-fox)
 [![Code Climate](https://codeclimate.com/github/ddubson/film-fox/badges/gpa.svg)](https://codeclimate.com/github/ddubson/film-fox)
 
-# Premise
+### Premise
 
-Movie listing app that lets you view/list movies, search for movies, add movies, favorite movies, rate movies, etc. More details to come.
+Movie listing app that lets you view/list movies, search for movies, add movies, favorite movies, rate movies, etc. This is the early stage of development but please stay tuned for new features,
+new documentation, and versions to come!
 
-# Application running instructions
-1. Start Apache Cassandra (v2.2.5) local cluster
-1. Start App by: **./activator clean run**
+***
+### Getting Started
 
-# Development environment setup
-- Apache Cassandra
-    1. Get latest Docker
-    2. Execute "docker build ." which builds the Docker image from Dockerfile
-
-# Technologies used
-1. SBT 0.13.11
-2. Spring Boot 1.3.2
-3. Spring Framework 4.2.4
-4. Apache Cassandra (Cassandra v2.2.5, DataStax driver v2.1.9)
-5. Spring Data Cassandra 1.3.4
-6. AngularJS 1.5.0
-7. Twitter Bootstrap 3.3.6
+Please refer to [FilmFox Docs](http://ddubson.github.io/film-fox) for all information on getting started, setting up the local development environment, the tech stack,
+and the how the gears grind behind the scenes
