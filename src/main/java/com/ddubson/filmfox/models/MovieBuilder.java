@@ -1,8 +1,5 @@
 package com.ddubson.filmfox.models;
 
-/**
- * Created by ddubson on 3/16/16.
- */
 public class MovieBuilder {
     Movie movie;
 
@@ -22,6 +19,11 @@ public class MovieBuilder {
 
     public MovieBuilder yearReleased(String yearReleased) {
         this.movie.setYearReleased(yearReleased);
+        return this;
+    }
+
+    public MovieBuilder trailerLink(String trailerLink) {
+        this.movie.setTrailerLink(trailerLink);
         return this;
     }
 
