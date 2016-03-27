@@ -10,7 +10,7 @@
     <link href="css/app.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet" type="text/css">
 </head>
-<body ng-app="app" ng-controller="HomeController">
+<body ng-app="app" ng-controller="MainController">
 <div class="container">
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -25,32 +25,13 @@
             </form>
         </div>
     </div>
-    <div class="panel panel-default" ng-repeat="movie in movies">
-        <div ng-click="showDetails = ! showDetails" class="panel-heading">
-            <div class="panel-title">
-                {{movie.name}} ({{movie['year-released']}})
-            </div>
-        </div>
-        <div ng-show="showDetails" class="panel-body">
-            Details:
-            <br/>id: {{movie.id}}
-            <br/>Trailer:
-            <br/>
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item"
-                        width="330"
-                        height="220"
-                        ng-src="{{ movie['trailer-link'] }}"
-                        allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </div>
+    <div ng-view></div>
 </div>
 <script src="bower_components/angularjs/angular.min.js"></script>
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
 <script src="js/app.js"></script>
-
-<script src="js/HomeViewModule/HomeController.js"></script>
+<script src="js/MoviesModule/MainController.js"></script>
+<script src="js/MoviesModule/ListMoviesController.js"></script>
 </body>
 </html>

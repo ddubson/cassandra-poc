@@ -75,7 +75,9 @@ public class AppController {
 
         //TODO catch 0 results
         //TODO paginate results
-
-        return movieSearchResults;
+        if(movieSearchResults != null && movieSearchResults.size() > 0) {
+            return movieSearchResults;
+        } else
+            throw new SearchResultsNotProcessedException("No movies found.");
     }
 }

@@ -12,7 +12,8 @@ sudo gpg --export --armor 0353B12C | sudo apt-key add -
 
 sudo apt-get update
 sudo apt-get install -y cassandra
-
+sudo service cassandra stop
 sudo sed -i 's/CMD_PATT="Dcassandra-pidfile=.*cassandra\.pid"/CMD_PATT="cassandra"/g' /etc/init.d/cassandra
+sudo sed -i 's/rpc_address: localhost/rpc_address: 192.168.33.10/g' /etc/cassandra/cassandra.yaml
 sudo update-rc.d cassandra defaults 95 10
 sudo service cassandra start
