@@ -2,3 +2,6 @@ language: scala
 jdk: oraclejdk8
 scala: 2.11.6
 script: sbt ++$TRAVIS_SCALA_VERSION test
+addons:
+    code_climate:
+        repo_token: 2a51c2a4894be699e9adab5eea8e19006f71fa6109c48273ec3af7bf07556fcd
