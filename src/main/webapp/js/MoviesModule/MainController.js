@@ -1,4 +1,8 @@
 angular.module('MoviesModule').controller('MainController',
-function($scope) {
-        $scope.title = "FilmFox - find your film.";
+function($scope, $location) {
+    $scope.go = function ( hash ) {
+      $location.path( hash );
+    };
+
+    $scope.title = "FilmFox - find your film.";
 });
