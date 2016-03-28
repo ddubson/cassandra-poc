@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Tech Stack - FilmFox Docs</title>
+	<title>Getting Started - FilmFox Docs</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -56,14 +56,14 @@
             
             
             
-                <li >
-                    <a href="../getting-started/">Getting Started</a>
+                <li class="active">
+                    <a href="./">Getting Started</a>
                 </li>
             
             
             
-                <li class="active">
-                    <a href="./">Tech Stack</a>
+                <li >
+                    <a href="../tech-stack/">Tech Stack</a>
                 </li>
             
             
@@ -77,12 +77,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../getting-started/">
+                    <a rel="next" href="..">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
+                <li >
+                    <a rel="prev" href="../tech-stack/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -96,48 +96,43 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#tech-stack">Tech Stack</a></li>
+        <li class="main active"><a href="#deploying-filmfox">Deploying FilmFox</a></li>
         
-            <li><a href="#build">Build</a></li>
+            <li><a href="#deploying-dependencies-with-vagrant">Deploying dependencies with Vagrant</a></li>
         
-            <li><a href="#container">Container</a></li>
-        
-            <li><a href="#dependency-injection">Dependency Injection</a></li>
-        
-            <li><a href="#data-persistence">Data Persistence</a></li>
-        
-            <li><a href="#front-end">Front End</a></li>
+            <li><a href="#running-the-application">Running the application</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="tech-stack">Tech Stack</h1>
-<h4 id="build">Build</h4>
-<ul>
-<li>SBT 0.13.11</li>
-<li>Vagrant 1.8.1</li>
-</ul>
-<h4 id="container">Container</h4>
-<ul>
-<li>Spring Boot 1.3.2</li>
-</ul>
-<h4 id="dependency-injection">Dependency Injection</h4>
-<ul>
-<li>Spring Framework 4.2.4</li>
-</ul>
-<h4 id="data-persistence">Data Persistence</h4>
-<ul>
-<li>Apache Cassandra 2.2.5 (Spring Data Cassandra 1.3.4)</li>
-<li>Elasticsearch 2.2.1 (Native Java Client)</li>
-</ul>
-<h4 id="front-end">Front End</h4>
-<ul>
-<li>Bower</li>
-<li>AngularJS 1.5.0</li>
-<li>Twitter Bootstrap 3.3.6</li>
-</ul></div>
+<h1 id="deploying-filmfox">Deploying FilmFox</h1>
+<p>This section will get you up and running with deploying FilmFox
+application on you local machine. One of the main focuses of FilmFox is to create a simple and down-to-the-point deployment
+routine. It shouldn't take hours and hours of playing around with config files,
+dependency servers, incompatibilities, etc. to get you to a running state. So let's do this as quick as possible. Read on!</p>
+<h2 id="deploying-dependencies-with-vagrant">Deploying dependencies with Vagrant</h2>
+<h6 id="context">Context</h6>
+<p>First thing you'll need is Vagrant (and VirtualBox). Vagrant helps us setup a portable environment so that we can
+set up all the dependency servers we require using a simple script ocated in the root directory
+of the repository, called 'Vagrantfile'. For more information about Vagrant, please visit https://www.vagrantup.com/.</p>
+<p>FilmFox was developed using VirtualBox as the underlying Vagrant provider, although you can use VMWare as well, however that has not been formally
+tested (just yet!)</p>
+<p>Tested under:</p>
+<blockquote>
+<p>VirtualBox - Version 5.0.6 r103037
+<br/>Vagrant - Version 1.8.1</p>
+</blockquote>
+<h6 id="step-by-step">Step-by-step</h6>
+<ol>
+<li>Download and install VirtualBox v5.0.6 or later @ https://www.virtualbox.org/wiki/Downloads</li>
+<li>Download and install Vagrant @ https://www.vagrantup.com/downloads.html</li>
+<li>Navigate to the root directory of the FilmFox repository and run the following command in Terminal or Command Line: <code>vagrant up</code></li>
+<li>After vagrant has finished downloading/provisioning the servers needed for the application to run, you can proceed to the next section.</li>
+</ol>
+<h2 id="running-the-application">Running the application</h2>
+<p>TBD</p></div>
         </div>
 
         <footer class="col-md-12">

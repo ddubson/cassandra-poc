@@ -11,6 +11,14 @@
 
     
     <url>
+     <loc>None/getting-started/</loc>
+     <lastmod>2016-03-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>None/tech-stack/</loc>
      <lastmod>2016-03-28</lastmod>
      <changefreq>daily</changefreq>
