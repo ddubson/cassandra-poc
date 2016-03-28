@@ -1,21 +1,29 @@
-<div class="panel panel-default" ng-repeat="movie in movies">
-    <div ng-click="showDetails = ! showDetails" class="panel-heading">
-        <div class="panel-title">
-            {{movie.name}} ({{movie['year-released']}})
+<div class="container">
+    <form ng-submit="search()" role="search">
+        <div class="form-group">
+            <input type="text" ng-model="movieToFind" class="form-control" placeholder="Search">
         </div>
+        <button type="submit" id="submit" value="Submit" class="btn btn-default">Search</button>
+    </form>
+    <div class="panel panel-default" ng-repeat="movieResult in movieResults">
+        <div ng-click="showDetails = ! showDetails" class="panel-heading">
+            <div class="panel-title">
+                {{movieResult.name}} ({{movieResult['year-released']}})
+            </div>
+        </div>
+        <!--<div ng-show="showDetails" class="panel-body">
+            Details:
+            <br/>id: {{movie.id}}
+            <br/>Trailer:
+            <br/>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                        width="330"
+                        height="220"
+                        ng-src="{{ movie['trailer-link'] }}"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>-->
     </div>
-    <!--<div ng-show="showDetails" class="panel-body">
-        Details:
-        <br/>id: {{movie.id}}
-        <br/>Trailer:
-        <br/>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item"
-                    width="330"
-                    height="220"
-                    ng-src="{{ movie['trailer-link'] }}"
-                    allowfullscreen>
-            </iframe>
-        </div>
-    </div>-->
 </div>
