@@ -15,6 +15,7 @@
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/highlight.css">
         <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -141,12 +142,14 @@ tested (just yet!)</p>
 <p>Running the application once Vagrant is up and running is simple. Here's how to do it:</p>
 <blockquote>
 <p>If you're running the application for the first time, you should load in some sample data into the environment.
-<br/>To do this, we grab the CQL script from src/main/resources named BaseCassandraData.cql and execute the full
-<br/>content on a Cassandra CQL command line (using cqlsh tool). To get the full configuration for Cassandra, observe
-<br/>src/main/resources/application.properties file. (Automation of execution of this script will be coming in future release.)</p>
+To do this, we grab the CQL script from src/main/resources named BaseCassandraData.cql and execute the full
+content on a Cassandra CQL command line (using cqlsh tool). To get the full configuration for Cassandra, observe src/main/resources/application.properties file.
+(Automation of execution of this script will be coming in future release.)</p>
 </blockquote>
-<p>Step-by-step
-1. In the Terminal or Command Line, to start up the app, just run:</p>
+<h4 id="step-by-step_1">Step-by-step</h4>
+<ol>
+<li>In the Terminal or Command Line, to start up the app, just run:</li>
+</ol>
 <pre><code class="bash">&gt; sbt run
 </code></pre>
 
