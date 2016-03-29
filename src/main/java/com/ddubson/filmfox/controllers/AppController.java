@@ -12,6 +12,8 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -48,13 +50,14 @@ public class AppController {
         MovieBuilder movieBuilder = new MovieBuilder()
                 .movieName(movieJson.getName())
                 .directedBy(movieJson.getDirectedBy())
-                .yearReleased(movieJson.getYearReleased());
+                .yearReleased(movieJson.getYearReleased())
+                .trailerLink(movieJson.getTrailerLink());
         return movieService.addMovie(movieBuilder);
     }
 
     @RequestMapping(value = "/movies/search", method = RequestMethod.POST)
     @ExceptionHandler(SearchResultsNotProcessedException.class)
-    public List<Movie> search(@RequestBody String movieName) {
+    public ResponseEntity<?> search(@RequestBody String movieName) {
         SearchResponse searchResponse = elasticsearchClient.getElasticClient()
                 .prepareSearch(ElasticsearchClient.MOVIES_INDEX)
                 .setTypes(ElasticsearchClient.MOVIES_TYPE)
@@ -68,13 +71,16 @@ public class AppController {
                 movieSearchResults.add(json.readValue(hit.getSourceAsString(), Movie.class));
             } catch (IOException e) {
                 sysLog.error("Search results could not be processed.", e);
-                throw new SearchResultsNotProcessedException("Search results could not be processed. This event has been logged.");
+                throw new SearchResultsNotProcessedException("Search results could not be processed. " +
+                        "This event has been logged.");
             }
         }
 
         //TODO catch 0 results
         //TODO paginate results
-
-        return movieSearchResults;
+        if (movieSearchResults.size() > 0) {
+            return ResponseEntity.ok(movieSearchResults);
+        } else
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No movies found.");
     }
 }

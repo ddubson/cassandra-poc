@@ -1,16 +1,17 @@
 {
-  "name": "cassandra-poc",
-  "homepage": "https://github.com/ddubson/cassandra-poc",
+  "name": "film-fox",
+  "homepage": "https://github.com/ddubson/film-fox",
   "authors": [
     "Dmitriy Dubson <d.dubson@gmail.com>"
   ],
   "dependencies" : {
     "bootstrap" : "3.3.6",
     "jquery" : "2.2.1",
-    "angularjs" : "1.5.0",
-    "angular-animate" : "1.5.x"
+    "angularjs" : "1.5.3",
+    "angular-animate" : "1.5.3",
+    "angular-route" : "1.5.3"
   },
-  "description": "PoC for Apache Cassandra",
+  "description": "Find your film!",
   "main": "",
   "moduleType": [],
   "license": "MIT",

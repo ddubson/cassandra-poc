@@ -1,0 +1,6 @@
+site_name: FilmFox Docs
+theme: flatly
+pages:
+- Home: index.md
+- Getting Started: getting-started.md
+- Tech Stack: tech-stack.md

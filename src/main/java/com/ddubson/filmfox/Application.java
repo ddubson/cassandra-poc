@@ -2,6 +2,7 @@ package com.ddubson.filmfox;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
@@ -14,6 +15,9 @@ import org.springframework.stereotype.Component;
 @PropertySource("classpath:application.properties")
 @Component
 class Application {
+    @Value("${server.port}")
+    int portBound;
+
     @Autowired
     Logger sysLog;
 
@@ -23,7 +27,7 @@ class Application {
 
     @EventListener
     public void appStarted(ContextRefreshedEvent e) {
-        sysLog.info("Application started.");
+        sysLog.info("Application started on port " + portBound);
     }
 
     @EventListener
