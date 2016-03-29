@@ -103,6 +103,8 @@
         
             <li><a href="#running-the-application">Running the application</a></li>
         
+            <li><a href="#customizing-your-build">Customizing your build</a></li>
+        
     
     </ul>
 </div></div>
@@ -150,13 +152,32 @@ content on a Cassandra CQL command line (using cqlsh tool). To get the full conf
 <ol>
 <li>In the Terminal or Command Line, to start up the app, just run:</li>
 </ol>
-<pre><code class="bash">&gt; sbt run
+<p>On Linux or OSX</p>
+<pre><code class="bash">&gt; ./activator run
+</code></pre>
+
+<p>On Windows</p>
+<pre><code class="bash">&gt; activator.bat run
 </code></pre>
 
 <ol>
 <li>Navigate to your browser and open <code>http://localhost:8080</code></li>
 </ol>
-<p>That's all there is to it. My aim is to make it stay this way, as simple and clean as possible.</p></div>
+<p>That's all there is to it. My aim is to make it stay this way, as simple and clean as possible.</p>
+<h3 id="customizing-your-build">Customizing your build</h3>
+<h4 id="setting-a-custom-port">Setting a custom port</h4>
+<p>FilmFox app lets you choose which port to bind the application on. By including a simple command line flag, you can
+perform this operation:</p>
+<p>On Linux or OSX</p>
+<pre><code class="bash">&gt; ./activator -Dserver.port=9000 run
+</code></pre>
+
+<p>On Windows</p>
+<pre><code class="bash">&gt; activator.bat -Dserver.port=9000 run
+</code></pre>
+
+<p>In this example we set the port to be 9000, but you are free to set a port of your own choosing (make sure to pick
+an open port and above the 1024 range for fear of potential collisions).</p></div>
         </div>
 
         <footer class="col-md-12">
