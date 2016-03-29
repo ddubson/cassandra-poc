@@ -112,8 +112,8 @@
 application on your local machine. One of the main focuses of FilmFox is to create a simple and down-to-the-point deployment
 routine. It shouldn't take hours and hours of playing around with config files,
 dependency servers, incompatibilities, etc. to get you to a running state. So let's do this as quick as possible. Read on!</p>
+<hr />
 <h2 id="deploying-dependencies-with-vagrant">Deploying dependencies with Vagrant</h2>
-<h4 id="context">Context</h4>
 <p>First thing you'll need is Vagrant (and VirtualBox). Vagrant helps us setup a portable environment so that we can
 set up all the dependency servers we require using a simple script located in the root directory
 of the repository, called 'Vagrantfile'. For more information about Vagrant, please visit https://www.vagrantup.com/.</p>
@@ -126,9 +126,14 @@ tested (just yet!)</p>
 </blockquote>
 <h4 id="step-by-step">Step-by-step</h4>
 <ol>
-<li>Download and install VirtualBox v5.0.6 or later @ https://www.virtualbox.org/wiki/Downloads</li>
-<li>Download and install Vagrant @ https://www.vagrantup.com/downloads.html</li>
-<li>Navigate to the root directory of the FilmFox repository and run the following command in Terminal or Command Line: <code>vagrant up</code></li>
+<li>Download and install VirtualBox v5.0.6 or later @ <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Downloads</a></li>
+<li>Download and install Vagrant @ <a href="https://www.vagrantup.com/downloads.html">Vagrant Downloads</a></li>
+<li>Navigate to the root directory of the FilmFox repository and run the following command in Terminal or Command Line:</li>
+</ol>
+<pre><code class="bash">&gt; vagrant up
+</code></pre>
+
+<ol>
 <li>After vagrant has finished downloading/provisioning the servers needed for the application to run, you can proceed to the next section.</li>
 </ol>
 <h2 id="running-the-application">Running the application</h2>
