@@ -116,7 +116,7 @@ dependency servers, incompatibilities, etc. to get you to a running state. So le
 <h3 id="running-dependencies-with-vagrant">Running Dependencies with Vagrant</h3>
 <p>First thing you'll need is Vagrant (and VirtualBox). Vagrant helps us setup a portable environment so that we can
 set up all the dependency servers we require using a simple script located in the root directory
-of the repository, called 'Vagrantfile'. For more information about Vagrant, please visit https://www.vagrantup.com/.</p>
+of the repository, called 'Vagrantfile'. For more information about Vagrant, please visit <a href="https://www.vagrantup.com/">Vagrant</a>.</p>
 <p>FilmFox was developed using VirtualBox as the underlying Vagrant provider, although you can use VMWare as well, however that has not been formally
 tested (just yet!)</p>
 <p>Tested under:</p>
@@ -138,7 +138,22 @@ tested (just yet!)</p>
 </ol>
 <hr />
 <h3 id="running-the-application">Running the application</h3>
-<p>TBD</p></div>
+<p>Running the application once Vagrant is up and running is simple. Here's how to do it:</p>
+<blockquote>
+<p>If you're running the application for the first time, you should load in some sample data into the environment.
+<br/>To do this, we grab the CQL script from src/main/resources named BaseCassandraData.cql and execute the full
+<br/>content on a Cassandra CQL command line (using cqlsh tool). To get the full configuration for Cassandra, observe
+<br/>src/main/resources/application.properties file. (Automation of execution of this script will be coming in future release.)</p>
+</blockquote>
+<p>Step-by-step
+1. In the Terminal or Command Line, to start up the app, just run:</p>
+<pre><code class="bash">&gt; sbt run
+</code></pre>
+
+<ol>
+<li>Navigate to your browser and open <code>http://localhost:8080</code></li>
+</ol>
+<p>That's all there is to it. My aim is to make it stay this way, as simple and clean as possible.</p></div>
         </div>
 
         <footer class="col-md-12">
