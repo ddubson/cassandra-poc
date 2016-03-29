@@ -5,6 +5,10 @@ function($scope, $location, $http) {
             $http.post("/movies/search", $scope.movieToFind)
             .success(function(response) {
                 $scope.movieResults = response;
+            })
+            .error(function(data, status, headers, config) {
+                console.log("status: " + status);
+                $scope.noResult = data;
             });
         }
     }
