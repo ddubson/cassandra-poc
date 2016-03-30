@@ -1,6 +1,7 @@
 package com.ddubson.filmfox.services.sync.impl;
 
 import com.ddubson.filmfox.ElasticsearchClient;
+import com.ddubson.filmfox.aop.TrackExecutionTime;
 import com.ddubson.filmfox.models.Movie;
 import com.ddubson.filmfox.services.movie.MovieService;
 import com.ddubson.filmfox.services.sync.IndexingService;
@@ -27,6 +28,7 @@ public class IndexingServiceImpl implements IndexingService {
 
     @Override
     @Scheduled(fixedRate = 50000, initialDelay = 10000)
+    @TrackExecutionTime
     public void sync() {
         sysLog.info("Scheduled indexing service started at " + DateTime.now().toString());
 

@@ -14,6 +14,10 @@
         <appender-ref ref="STDOUT" />
     </logger>
 
+    <logger name="com.ddubson.filmfox.aop" level="INFO">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
     <root level="ERROR">
         <appender-ref ref="STDOUT" />
     </root>

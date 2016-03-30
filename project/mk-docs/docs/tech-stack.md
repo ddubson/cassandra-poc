@@ -7,8 +7,9 @@
 #### Container
 * Spring Boot 1.3.2
 
-#### Dependency Injection
-* Spring Framework 4.2.4
+#### Libraries
+* DI - Spring Framework 4.2.4
+* AspectJ 1.8.9
 
 #### Data Persistence
 * Apache Cassandra 2.2.5 (Spring Data Cassandra 1.3.4)
