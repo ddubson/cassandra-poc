@@ -5,7 +5,7 @@
 * Vagrant 1.8.1
 
 #### Container
-* Spring Boot 1.3.2
+* Spring Boot 1.3.3
 
 #### Libraries
 * DI - Spring Framework 4.2.4

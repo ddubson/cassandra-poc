@@ -6,7 +6,7 @@ config(function ($routeProvider, $sceDelegateProvider) {
     });
 
     $routeProvider.when('/search', {
-        templateUrl: 'partials/search_results.html',
+        templateUrl: 'partials/search.html',
         controller: 'SearchMoviesController'
     });
 

@@ -9,8 +9,8 @@ libraryDependencies ++= Seq(
   "com.datastax.cassandra" % "cassandra-driver-core" % "2.1.9",
   "org.springframework" % "spring-context" % "4.2.4.RELEASE",
   "org.springframework" % "spring-aspects" % "4.2.4.RELEASE",
-  "org.springframework.boot" % "spring-boot-starter-parent" % "1.3.2.RELEASE",
-  "org.springframework.boot" % "spring-boot-starter-web" % "1.3.2.RELEASE",
+  "org.springframework.boot" % "spring-boot-starter-parent" % "1.3.3.RELEASE",
+  "org.springframework.boot" % "spring-boot-starter-web" % "1.3.3.RELEASE",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.2",
   "com.fasterxml.jackson.core" % "jackson-core" % "2.6.2",
   "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.2",
@@ -23,7 +23,8 @@ libraryDependencies ++= Seq(
   "junit"             % "junit"           % "4.12"  % "test",
   "com.novocode"      % "junit-interface" % "0.11"  % "test",
   "org.mockito"       % "mockito-core"    % "2.0.43-beta" % "test",
-  "org.hamcrest"      % "hamcrest-core"   % "1.3" % "test"
+  "org.hamcrest"      % "hamcrest-core"   % "1.3" % "test",
+  "org.springframework.boot" % "spring-boot-starter-test" % "1.3.3.RELEASE" % "test"
 )
 
 dependencyOverrides ++= Set(

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @SpringBootApplication
 @PropertySource("classpath:application.properties")
 @Component
-class Application {
+public class Application {
     @Value("${server.port}")
     int portBound;
 

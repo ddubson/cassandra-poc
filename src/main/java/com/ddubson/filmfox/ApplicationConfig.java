@@ -14,14 +14,17 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
 @EnableAsync
 @EnableScheduling
 @ComponentScan("com.ddubson.filmfox.aop")
 @EnableAspectJAutoProxy
-public class ApplicationConfig {
-    public final static String SYSTEM_LOG = "com.ddubson.filmfox.system";
+public class ApplicationConfig extends WebMvcConfigurerAdapter {
+    private final static String SYSTEM_LOG = "com.ddubson.filmfox.system";
+
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
@@ -45,5 +48,11 @@ public class ApplicationConfig {
     @Bean
     public IndexingService indexingService() {
         return new IndexingServiceImpl();
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        // Forward root to webapp/index.html
+        registry.addViewController("/").setViewName("/index.html");
     }
 }
