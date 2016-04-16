@@ -20,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableAsync
 @EnableScheduling
-@ComponentScan("com.ddubson.filmfox.aop")
+@ComponentScan(value = {"com.ddubson.filmfox.aop", "com.ddubson.filmfox.security"})
 @EnableAspectJAutoProxy
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
     private final static String SYSTEM_LOG = "com.ddubson.filmfox.system";

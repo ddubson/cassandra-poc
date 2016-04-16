@@ -11,6 +11,8 @@ libraryDependencies ++= Seq(
   "org.springframework" % "spring-aspects" % "4.2.4.RELEASE",
   "org.springframework.boot" % "spring-boot-starter-parent" % "1.3.3.RELEASE",
   "org.springframework.boot" % "spring-boot-starter-web" % "1.3.3.RELEASE",
+  "org.springframework.security" % "spring-security-web" % "4.0.4.RELEASE",
+  "org.springframework.security" % "spring-security-config" % "4.0.4.RELEASE",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.2",
   "com.fasterxml.jackson.core" % "jackson-core" % "2.6.2",
   "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.2",
