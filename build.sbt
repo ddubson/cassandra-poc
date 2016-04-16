@@ -24,7 +24,10 @@ libraryDependencies ++= Seq(
   "com.novocode"      % "junit-interface" % "0.11"  % "test",
   "org.mockito"       % "mockito-core"    % "2.0.43-beta" % "test",
   "org.hamcrest"      % "hamcrest-core"   % "1.3" % "test",
-  "org.springframework.boot" % "spring-boot-starter-test" % "1.3.3.RELEASE" % "test"
+  "org.springframework.boot" % "spring-boot-starter-test" % "1.3.3.RELEASE" % "test",
+  "org.cassandraunit" % "cassandra-unit-spring" % "2.2.2.1" exclude("org.cassandraunit", "cassandra-unit"),
+  "org.cassandraunit" % "cassandra-unit-shaded" % "2.1.9.2",
+  "org.hectorclient" % "hector-core" % "2.0-0"
 )
 
 dependencyOverrides ++= Set(

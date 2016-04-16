@@ -71,12 +71,11 @@ public class AppController {
                 movieSearchResults.add(json.readValue(hit.getSourceAsString(), Movie.class));
             } catch (IOException e) {
                 sysLog.error("Search results could not be processed.", e);
-                throw new SearchResultsNotProcessedException("Search results could not be processed. " +
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Search results could not be processed. " +
                         "This event has been logged.");
             }
         }
 
-        //TODO catch 0 results
         //TODO paginate results
         if (movieSearchResults.size() > 0) {
             return ResponseEntity.ok(movieSearchResults);
