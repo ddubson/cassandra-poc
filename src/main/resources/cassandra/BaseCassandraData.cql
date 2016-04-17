@@ -15,6 +15,12 @@ CREATE TABLE "movies" (
 	PRIMARY KEY ("id", "name")
 );
 
+CREATE TABLE users (
+	"email" text,
+	"password" blob,
+	PRIMARY KEY ("email")
+);
+
 INSERT INTO "movies" ("name", "id", "year_released", "directed_by", "trailer_link")
 VALUES (
   'Pulp Fiction',
