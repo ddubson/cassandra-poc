@@ -2,7 +2,6 @@ package com.ddubson.filmfox.controllers;
 
 import com.ddubson.filmfox.models.User;
 import com.ddubson.filmfox.security.CustomSecurityContext;
-import com.ddubson.filmfox.security.CustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -24,14 +23,14 @@ public class AuthController {
     @Autowired
     CustomSecurityContext customSecurityContext;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String doLogin(@RequestBody User user) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
                 user.getEmail(), user.getPassword());
-        CustomUserDetails userDetails = new CustomUserDetails();
+        /*CustomUserDetails userDetails = new CustomUserDetails(user, userRole);
         userDetails.setEmail(user.getEmail());
         userDetails.setPassword(user.getPassword());
-        token.setDetails(userDetails);
+        token.setDetails(userDetails);*/
 
         Authentication auth = null;
         try {
@@ -46,5 +45,10 @@ public class AuthController {
         } else {
             return "Did not successfully authenticate.";
         }
+    }
+
+    @RequestMapping("/403")
+    public String accessDenied() {
+        return "Access Denied.";
     }
 }

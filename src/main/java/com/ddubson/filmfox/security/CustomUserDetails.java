@@ -1,30 +1,45 @@
 package com.ddubson.filmfox.security;
 
 import com.ddubson.filmfox.models.User;
+import com.ddubson.filmfox.models.UserRole;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.util.StringUtils;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Author: ddubson
  */
-public class CustomUserDetails extends User implements UserDetails {
+public class CustomUserDetails implements UserDetails {
     private static final long serialVersionUID = 1L;
+    private User user;
+    private List<String> userRoles;
+
+    public CustomUserDetails(User user, List<UserRole> userRoles) {
+        this.user = user;
+        if (userRoles != null && userRoles.size() > 0) {
+            this.userRoles = userRoles.stream().map(UserRole::getRole).collect(Collectors.toList());
+        }
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        String roles = StringUtils.collectionToCommaDelimitedString(userRoles);
+        return AuthorityUtils.commaSeparatedStringToAuthorityList(roles);
     }
 
     @Override
     public String getPassword() {
-        return this.getPassword();
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return this.getEmail();
+        return user.getEmail();
     }
 
     @Override

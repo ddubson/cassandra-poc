@@ -11,7 +11,7 @@ import org.springframework.data.cassandra.mapping.Table;
  */
 @Table("users")
 public class User {
-    @PrimaryKeyColumn(name = "email", ordinal = 0, type = PrimaryKeyType.CLUSTERED, ordering = Ordering.DESCENDING)
+    @PrimaryKeyColumn(name = "email", ordinal = 0, type = PrimaryKeyType.PARTITIONED, ordering = Ordering.DESCENDING)
     String email;
     @Column("password")
     String password;
