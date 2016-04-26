@@ -23,6 +23,8 @@ public class CustomUserDetails implements UserDetails {
         this.user = user;
         if (userRoles != null && userRoles.size() > 0) {
             this.userRoles = userRoles.stream().map(UserRole::getRole).collect(Collectors.toList());
+        } else {
+            this.userRoles = null;
         }
     }
 
@@ -44,21 +46,21 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }

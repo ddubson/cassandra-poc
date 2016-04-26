@@ -12,6 +12,6 @@ import java.util.List;
  */
 @Repository
 public interface UserRoleRepository extends CassandraRepository<UserRole> {
-    @Query("select * from users_roles where email = ?1")
+    @Query("select * from users_roles where email = ?0")
     List<UserRole> findRolesByEmail(String email);
 }

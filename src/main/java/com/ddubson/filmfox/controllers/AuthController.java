@@ -27,10 +27,6 @@ public class AuthController {
     public String doLogin(@RequestBody User user) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
                 user.getEmail(), user.getPassword());
-        /*CustomUserDetails userDetails = new CustomUserDetails(user, userRole);
-        userDetails.setEmail(user.getEmail());
-        userDetails.setPassword(user.getPassword());
-        token.setDetails(userDetails);*/
 
         Authentication auth = null;
         try {

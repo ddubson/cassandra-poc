@@ -27,6 +27,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableAspectJAutoProxy
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
     private final static String SYSTEM_LOG = "com.ddubson.filmfox.system";
+    private final static String AUTH_LOG = "com.ddubson.filmfox.auth";
 
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
@@ -47,6 +48,9 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
     public Logger sysLog() {
         return LoggerFactory.getLogger(SYSTEM_LOG);
     }
+
+    @Bean
+    public Logger authLog() { return LoggerFactory.getLogger(AUTH_LOG); }
 
     @Bean
     public IndexingService indexingService() {

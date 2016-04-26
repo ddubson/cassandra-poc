@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserRepository extends CassandraRepository<User> {
-    @Query("select * from users where email = ?1")
-    User findUserByEmail(String email);
+    @Query("select email, password from users where email = ?0")
+    User findByEmail(String email);
 }
