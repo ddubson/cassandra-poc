@@ -2,13 +2,18 @@
     "docs": [
         {
             "location": "/", 
-            "text": "FilmFox Documentation\n\n\nThis page is a stub for the upcoming docs describing the app FilmFox", 
+            "text": "FilmFox Documentation\n\n\nFilmFox is a Java application made primarily to learn from. The caveats of software development are explored in depth, such\nas reliability, logging, connectivity, design patterns, etc.\n\n\nLogical Architecture", 
             "title": "Home"
         }, 
         {
             "location": "/#filmfox-documentation", 
-            "text": "This page is a stub for the upcoming docs describing the app FilmFox", 
+            "text": "FilmFox is a Java application made primarily to learn from. The caveats of software development are explored in depth, such\nas reliability, logging, connectivity, design patterns, etc.", 
             "title": "FilmFox Documentation"
+        }, 
+        {
+            "location": "/#logical-architecture", 
+            "text": "", 
+            "title": "Logical Architecture"
         }, 
         {
             "location": "/getting-started/", 
@@ -52,7 +57,7 @@
         }, 
         {
             "location": "/tech-stack/", 
-            "text": "Tech Stack\n\n\nBuild\n\n\n\n\nSBT 0.13.11\n\n\nVagrant 1.8.1\n\n\n\n\nContainer\n\n\n\n\nSpring Boot 1.3.2\n\n\n\n\nLibraries\n\n\n\n\nDI - Spring Framework 4.2.4\n\n\nAspectJ 1.8.9\n\n\n\n\nData Persistence\n\n\n\n\nApache Cassandra 2.2.5 (Spring Data Cassandra 1.3.4)\n\n\nElasticsearch 2.2.1 (Native Java Client)\n\n\n\n\nFront End\n\n\n\n\nBower\n\n\nAngularJS 1.5.0\n\n\nTwitter Bootstrap 3.3.6", 
+            "text": "Tech Stack\n\n\nBuild\n\n\n\n\nSBT 0.13.11\n\n\nVagrant 1.8.1\n\n\n\n\nContainer\n\n\n\n\nSpring Boot 1.3.3\n\n\n\n\nLibraries\n\n\n\n\nDI - Spring Framework 4.2.4\n\n\nAspectJ 1.8.9\n\n\n\n\nData Persistence\n\n\n\n\nApache Cassandra 2.2.5 (Spring Data Cassandra 1.3.4)\n\n\nElasticsearch 2.2.1 (Native Java Client)\n\n\n\n\nFront End\n\n\n\n\nBower\n\n\nAngularJS 1.5.0\n\n\nTwitter Bootstrap 3.3.6", 
             "title": "Tech Stack"
         }, 
         {
@@ -67,7 +72,7 @@
         }, 
         {
             "location": "/tech-stack/#container", 
-            "text": "Spring Boot 1.3.2", 
+            "text": "Spring Boot 1.3.3", 
             "title": "Container"
         }, 
         {
