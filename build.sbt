@@ -5,19 +5,26 @@ scalaVersion := "2.11.6"
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint")
 mainClass in Compile := Some("com.ddubson.filmfox.Application")
 
+assemblyJarName in assembly := "film-fox.jar"
+test in assembly := {}
+mainClass in assembly := Some("com.ddubson.filmfox.Application")
+
 libraryDependencies ++= Seq(
   "com.datastax.cassandra" % "cassandra-driver-core" % "2.1.9",
   "org.springframework" % "spring-context" % "4.2.4.RELEASE",
   "org.springframework" % "spring-aspects" % "4.2.4.RELEASE",
   "org.springframework.boot" % "spring-boot-starter-parent" % "1.3.3.RELEASE",
   "org.springframework.boot" % "spring-boot-starter-web" % "1.3.3.RELEASE",
+  "org.springframework.boot" % "spring-boot-starter-tomcat" % "1.3.3.RELEASE",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.2",
   "com.fasterxml.jackson.core" % "jackson-core" % "2.6.2",
   "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.2",
   "org.springframework.data" % "spring-data-cassandra" % "1.3.4.RELEASE",
   "ch.qos.logback" % "logback-classic" % "1.1.6",
-  "org.elasticsearch" % "elasticsearch" % "2.2.1",
+  ("org.elasticsearch" % "elasticsearch" % "2.2.1")
+      .exclude("joda-time", "joda-time"),
   "org.aspectj" % "aspectjrt" % "1.8.9",
+  "joda-time" % "joda-time" % "2.8.2",
 
   // Test Libraries
   "junit"             % "junit"           % "4.12"  % "test",
