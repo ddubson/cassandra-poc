@@ -4,4 +4,4 @@ FilmFox is a Java application made primarily to learn from. The caveats of softw
 as reliability, logging, connectivity, design patterns, etc.
 
 ## Logical Architecture
-![Logical Diagram](http://s32.postimg.org/euq7aqurp/Film_Fox_Logical_Diagram_New_Page_2.png)
+![Logical Diagram](http://s32.postimg.org/i32wp6gcl/Film_Fox_Logical_Diagram_New_Page_3.png)
