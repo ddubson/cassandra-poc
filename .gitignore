@@ -8,3 +8,5 @@ target/
 bower_components
 .vagrant
 project/mk-docs/site
+build/
+.gradle
