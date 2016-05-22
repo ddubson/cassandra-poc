@@ -1,11 +1,11 @@
 # Tech Stack
 
 #### Build	
-* SBT 0.13.11
+* Gradle 2.13
 * Vagrant 1.8.1
 
 #### Container
-* Spring Boot 1.3.3
+* Spring Boot 1.3.5
 
 #### Libraries
 * DI - Spring Framework 4.2.4

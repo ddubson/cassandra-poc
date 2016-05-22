@@ -14,7 +14,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
  * Author: ddubson
  */
 //@RunWith(SpringJUnit4ClassRunner.class)
-//@SpringApplicationConfiguration(Application.class)
+//@SpringApplicationConfiguration(com.ddubson.filmfox.Application.class)
 //@WebIntegrationTest
 public class AppControllerIntegrationTest {
     RestTemplate template = new RestTemplate();
