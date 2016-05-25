@@ -9,7 +9,7 @@ ENV version 0.1-alpha
 EXPOSE 8080
 
 # Install JDK8
-RUN apt-get update && apt-get install -y openjdk-8-jre dos2unix && export JAVA_HOME=/usr/java/default/
+RUN apt-get update && apt-get install -y openjdk-8-jdk dos2unix && export JAVA_HOME=/usr/java/default/
 
 ADD . ${workspace}
 WORKDIR ${workspace}
