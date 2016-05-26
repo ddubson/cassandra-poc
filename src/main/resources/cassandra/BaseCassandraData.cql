@@ -36,7 +36,13 @@ VALUES (
 INSERT INTO users_roles ("email", "role_name")
 VALUES (
 	'd.dubson@gmail.com',
-	'ADMIN'
+	'ROLE_ADMIN'
+);
+
+INSERT INTO users_roles ("email", "role_name")
+VALUES (
+	'd.dubson@gmail.com',
+	'ROLE_USER'
 );
 
 INSERT INTO "movies" ("name", "id", "year_released", "directed_by", "trailer_link")

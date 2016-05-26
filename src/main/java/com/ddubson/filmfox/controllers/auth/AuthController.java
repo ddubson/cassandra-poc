@@ -1,4 +1,4 @@
-package com.ddubson.filmfox.controllers;
+package com.ddubson.filmfox.controllers.auth;
 
 import com.ddubson.filmfox.models.User;
 import com.ddubson.filmfox.security.CustomSecurityContext;
@@ -22,26 +22,6 @@ public class AuthController {
 
     @Autowired
     CustomSecurityContext customSecurityContext;
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String doLogin(@RequestBody User user) {
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
-                user.getEmail(), user.getPassword());
-
-        Authentication auth = null;
-        try {
-            auth = authenticationManager.authenticate(token);
-        } catch (BadCredentialsException e) {
-            return "Email or password provided was incorrect.";
-        }
-
-        if (auth != null && auth.isAuthenticated()) {
-            customSecurityContext.setAuthentication(auth);
-            return "Successfully authenticated!";
-        } else {
-            return "Did not successfully authenticate.";
-        }
-    }
 
     @RequestMapping("/403")
     public String accessDenied() {

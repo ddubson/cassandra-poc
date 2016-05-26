@@ -29,15 +29,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers(HttpMethod.POST, "/login").permitAll()
+                .antMatchers(HttpMethod.GET, "/login").permitAll()
                 .antMatchers(HttpMethod.POST, "/movies").access("hasRole('USER')")
-                .antMatchers("/movies", "/movies/**").access("hasRole('USER')")
-                /*.and().formLogin().usernameParameter("email").passwordParameter("password")*/
+                .antMatchers(HttpMethod.GET, "/", "/home", "/movies", "/movies/**").hasRole("USER")
+                .and()
+                .formLogin()
+                .loginPage("/login").defaultSuccessUrl("/home")
+                .failureUrl("/login?error=true").permitAll()
+                .and()
+                .logout().logoutSuccessUrl("/login?logout=true")
                 .and()
                 .exceptionHandling().accessDeniedPage("/403")
                 .and()
-                .csrf().disable();
+                .csrf()
+                .disable();
     }
 
     /**

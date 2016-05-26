@@ -30,9 +30,13 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userRepository.findByEmail(email);
         if (user != null)
             authLog.info("Retrieved user " + user.getEmail());
+        else {
+            authLog.info(String.format("Unsuccessful login attempt by unknown user: %s", email));
+            throw new UsernameNotFoundException("Incorrect email or password.");
+        }
 
         List<UserRole> userRoles = userRoleRepository.findRolesByEmail(email);
-        if(userRoles != null && user != null) {
+        if(userRoles != null) {
             authLog.info("Retrieved user roles for " + user.getEmail());
         }
 
