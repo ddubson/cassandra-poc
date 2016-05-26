@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  cassandra:
+    image: cassandra:2.2.5
+    ports:
+      - "9042:9042"
+  elastic:
+    image: elasticsearch:2.3.3
+    ports:
+      - "9200:9200"
+      - "9300:9200"
