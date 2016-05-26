@@ -25,9 +25,8 @@ public class ElasticsearchClient {
     public void onShutdown() {
         if (elasticClient != null) {
             elasticClient.close();
+            sysLog.info("Elasticsearch connection closed.");
         }
-
-        sysLog.info("Elasticsearch connection closed.");
     }
 
     public Client getElasticClient() {
