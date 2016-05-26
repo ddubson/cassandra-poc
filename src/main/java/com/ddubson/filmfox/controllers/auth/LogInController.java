@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class LogInController {
-    @RequestMapping
+    @RequestMapping("/login")
     public String login() {
         // Return login.html thymeleaf template
         return "login";

@@ -1,15 +1,46 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
 <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Filmfox - Find your film! - Welcome!</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link th:href="@{/bower_components/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/app.css}" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div>
-    Hello!
+<div class="container">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <h1>FilmFox!</h1>
+            </div>
+            <button>Search</button>
+            <div th:text="${'Hello ' + email + '!'}"></div>
+            <div>
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="Sign Out"/>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
+<div class="panel panel-default" th:each="movie : ${movies}">
+    <div class="panel-heading">
+        <div class="panel-title" th:text="${movie.name}+' ('+${movie.yearReleased}+')'"></div>
+    </div>
+    <div class="panel-body">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item"
+                    width="330"
+                    height="220"
+                    th:src="${movie.trailerLink}"
+                    allowfullscreen="allowfullscreen">
+            </iframe>
+        </div>
+    </div>
 </div>
 </body>
 </html>

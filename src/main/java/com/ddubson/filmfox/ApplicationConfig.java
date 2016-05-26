@@ -12,10 +12,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.Ordered;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
@@ -29,6 +28,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
     private final static String SYSTEM_LOG = "com.ddubson.filmfox.system";
     private final static String AUTH_LOG = "com.ddubson.filmfox.auth";
+    private static final String[] RESOURCE_LOCATIONS = {
+            "classpath:/META-INF/resources/", "classpath:/resources/",
+            "classpath:/static/", "classpath:/public/"};
 
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
@@ -51,7 +53,9 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    public Logger authLog() { return LoggerFactory.getLogger(AUTH_LOG); }
+    public Logger authLog() {
+        return LoggerFactory.getLogger(AUTH_LOG);
+    }
 
     @Bean
     public IndexingService indexingService() {
@@ -59,10 +63,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
     }
 
     @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        // Forward root to webapp/index.html
-        registry.addViewController("/").setViewName("home");
-        registry.addViewController("/home").setViewName("home");
-        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**").addResourceLocations(RESOURCE_LOCATIONS);
     }
 }
