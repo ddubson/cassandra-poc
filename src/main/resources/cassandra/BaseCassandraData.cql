@@ -15,6 +15,36 @@ CREATE TABLE "movies" (
 	PRIMARY KEY ("id", "name")
 );
 
+CREATE TABLE users (
+	"email" text,
+	"password" text,
+	PRIMARY KEY ("email")
+);
+
+CREATE TABLE users_roles (
+	"email" text,
+	"role_name" text,
+	PRIMARY KEY ("email", "role_name")
+);
+
+INSERT INTO users ("email", "password")
+VALUES (
+	'd.dubson@gmail.com',
+	'$2a$10$VNtKqoVvlRyXyIZm5NE2L.HCQPM5nENOry8TOB.6xaY0JOC5G0hHy'
+);
+
+INSERT INTO users_roles ("email", "role_name")
+VALUES (
+	'd.dubson@gmail.com',
+	'ROLE_ADMIN'
+);
+
+INSERT INTO users_roles ("email", "role_name")
+VALUES (
+	'd.dubson@gmail.com',
+	'ROLE_USER'
+);
+
 INSERT INTO "movies" ("name", "id", "year_released", "directed_by", "trailer_link")
 VALUES (
   'Pulp Fiction',
