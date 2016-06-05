@@ -153,11 +153,11 @@ content on a Cassandra CQL command line (using cqlsh tool). To get the full conf
 <li>In the Terminal or Command Line, to start up the app, just run:</li>
 </ol>
 <p>On Linux or OSX</p>
-<pre><code class="bash">&gt; ./activator run
+<pre><code class="bash">&gt; ./gradlew compileJava bootRun
 </code></pre>
 
 <p>On Windows</p>
-<pre><code class="bash">&gt; activator.bat run
+<pre><code class="bash">&gt; gradlew.bat compileJava bootRun
 </code></pre>
 
 <ol>
@@ -169,11 +169,11 @@ content on a Cassandra CQL command line (using cqlsh tool). To get the full conf
 <p>FilmFox app lets you choose which port to bind the application on. By including a simple command line flag, you can
 perform this operation:</p>
 <p>On Linux or OSX</p>
-<pre><code class="bash">&gt; ./activator -Dserver.port=9000 run
+<pre><code class="bash">&gt; ./gradlew -Dserver.port=9000 bootRun
 </code></pre>
 
 <p>On Windows</p>
-<pre><code class="bash">&gt; activator.bat -Dserver.port=9000 run
+<pre><code class="bash">&gt; gradlew.bat -Dserver.port=9000 bootRun
 </code></pre>
 
 <p>In this example we set the port to be 9000, but you are free to set a port of your own choosing (make sure to pick
