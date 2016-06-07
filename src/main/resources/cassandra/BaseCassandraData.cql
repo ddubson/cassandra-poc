@@ -27,6 +27,7 @@ CREATE TABLE users_roles (
 	PRIMARY KEY ("email", "role_name")
 );
 
+// password: test1234
 INSERT INTO users ("email", "password")
 VALUES (
 	'd.dubson@gmail.com',
