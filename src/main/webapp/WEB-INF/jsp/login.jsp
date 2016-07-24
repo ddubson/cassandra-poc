@@ -13,8 +13,8 @@
     <title>FilmFox!</title>
 
     <!-- Custom CSS -->
-    <link th:href="@{/css/3-col-portfolio.css}" rel="stylesheet"/>
-    <link th:href="@{/bower_components/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="<c:url value="/static/css/3-col-portfolio.css" />" rel="stylesheet" />
+    <link href="<c:url value="/static/css/bootstrap.min.css" />" rel="stylesheet" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,7 +35,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a th:href="@{/logout}">Sign Out</a>
+                    <a href="<c:url value='/logout' />">Sign Out</a>
                 </li>
             </ul>
         </div>
@@ -78,7 +78,7 @@
         <!-- /.row -->
     </footer>
 </div>
-<script src="@{/bower_components/jquery/dist/jquery.min.js}"></script>
-<script src="@{/bower_components/bootstrap/dist/bootstrap.min.js}"></script>
+<script src="<c:url value="/static/bower_components/jquery/dist/jquery.min.js" />"
+<script src="<c:url value="/static/bower_components/bootstrap/dist/bootstrap.min.js" />"
 </body>
 </html>

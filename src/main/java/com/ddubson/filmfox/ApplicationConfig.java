@@ -29,7 +29,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
     private final static String SYSTEM_LOG = "com.ddubson.filmfox.system";
     private final static String AUTH_LOG = "com.ddubson.filmfox.auth";
     private static final String[] RESOURCE_LOCATIONS = {
-            "classpath:/META-INF/resources/", "classpath:/resources/",
+            "/resources/",
             "classpath:/WEB-INF/jsp", "classpath:/public/"};
 
     @Bean
@@ -64,6 +64,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations(RESOURCE_LOCATIONS);
+        registry.addResourceHandler("/static/**").addResourceLocations(RESOURCE_LOCATIONS);
     }
 }

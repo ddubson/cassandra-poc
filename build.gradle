@@ -43,7 +43,7 @@ dependencies {
     compile(group: 'org.elasticsearch', name: 'elasticsearch', version: '2.2.1')
     compile(group: 'org.aspectj', name: 'aspectjrt', version: '1.8.9')
     compile(group: 'joda-time', name: 'joda-time', version: '2.8.2')
-    compile(group: 'javax.servlet', name: 'jstl')
+    compile(group: 'javax.servlet', name: 'jstl', version: '1.2')
     testCompile(group: 'com.novocode', name: 'junit-interface', version: '0.11')
     testCompile(group: 'org.mockito', name: 'mockito-core', version: '2.0.43-beta')
     testCompile(group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3')
