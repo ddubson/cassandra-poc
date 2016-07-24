@@ -41,11 +41,11 @@ content on a Cassandra CQL command line (using cqlsh tool). To get the full conf
 
 On Linux or OSX
 ```bash
-> ./activator run
+> ./gradlew compileJava bootRun
 ```
 On Windows
 ```bash
-> activator.bat run
+> gradlew.bat compileJava bootRun
 ```
 
 2. Navigate to your browser and open `http://localhost:8080`
@@ -59,11 +59,11 @@ perform this operation:
 
 On Linux or OSX
 ```bash
-> ./activator -Dserver.port=9000 run
+> ./gradlew -Dserver.port=9000 bootRun
 ```
 On Windows
 ```bash
-> activator.bat -Dserver.port=9000 run
+> gradlew.bat -Dserver.port=9000 bootRun
 ```
 
 In this example we set the port to be 9000, but you are free to set a port of your own choosing (make sure to pick

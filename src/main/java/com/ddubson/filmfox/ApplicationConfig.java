@@ -30,7 +30,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
     private final static String AUTH_LOG = "com.ddubson.filmfox.auth";
     private static final String[] RESOURCE_LOCATIONS = {
             "classpath:/META-INF/resources/", "classpath:/resources/",
-            "classpath:/static/", "classpath:/public/"};
+            "classpath:/WEB-INF/jsp", "classpath:/public/"};
 
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
