@@ -1,17 +1,15 @@
 package com.ddubson.filmfox.repositories;
 
 import com.ddubson.filmfox.models.UserRole;
-import org.springframework.data.cassandra.repository.CassandraRepository;
-import org.springframework.data.cassandra.repository.Query;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
-/**
- * Author: ddubson
- */
 @Repository
-public interface UserRoleRepository extends CassandraRepository<UserRole> {
+public interface UserRoleRepository extends CrudRepository<UserRole, UUID> {
     @Query("select * from users_roles where email = ?0")
     List<UserRole> findRolesByEmail(String email);
 }

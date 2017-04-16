@@ -10,3 +10,6 @@ bower_components
 project/mk-docs/site
 build/
 .gradle
+classes/
+node_modules/
+src/main/resources/static/bundle.js

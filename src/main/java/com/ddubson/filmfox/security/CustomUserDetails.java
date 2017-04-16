@@ -11,9 +11,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Author: ddubson
- */
 public class CustomUserDetails implements UserDetails {
     private static final long serialVersionUID = 1L;
     private User user;

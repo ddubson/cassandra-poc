@@ -17,8 +17,6 @@ public class AppController {
 
     @RequestMapping(value={"/home", "/"})
     public String homePage(Model model) {
-        model.addAttribute("email", customSecurityContext.getCurrentUser());
-        model.addAttribute("movies", movieService.getMovieSummaries());
-        return "home";
+        return "index";
     }
 }

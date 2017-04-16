@@ -12,7 +12,6 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @SpringBootApplication
-@PropertySource("classpath:application.properties")
 @Component
 public class Application {
     @Value("${server.port}")

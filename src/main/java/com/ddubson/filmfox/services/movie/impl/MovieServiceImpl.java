@@ -1,13 +1,9 @@
 package com.ddubson.filmfox.services.movie.impl;
 
-import com.datastax.driver.core.utils.UUIDs;
 import com.ddubson.filmfox.models.Movie;
-import com.ddubson.filmfox.models.MovieBuilder;
 import com.ddubson.filmfox.repositories.MovieRepository;
 import com.ddubson.filmfox.services.movie.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.cassandra.repository.MapId;
-import org.springframework.data.cassandra.repository.support.BasicMapId;
 
 import java.util.List;
 import java.util.UUID;
@@ -23,19 +19,11 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public Movie getMovieById(UUID id) {
-        return movieRepository.findOne(createMapId(id));
+        return movieRepository.findOne(id);
     }
 
     @Override
-    public Movie addMovie(MovieBuilder movieBuilder) {
-        Movie movie = movieBuilder.create();
-        movie.setId(UUIDs.timeBased());
+    public Movie addMovie(Movie movie) {
         return movieRepository.save(movie);
-    }
-
-    protected MapId createMapId(UUID id) {
-        MapId mapId = new BasicMapId();
-        mapId.with("id", id);
-        return mapId;
     }
 }

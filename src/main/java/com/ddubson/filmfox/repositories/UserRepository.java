@@ -1,15 +1,12 @@
 package com.ddubson.filmfox.repositories;
 
 import com.ddubson.filmfox.models.User;
-import org.springframework.data.cassandra.repository.CassandraRepository;
-import org.springframework.data.cassandra.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-/**
- * Author: ddubson
- */
+import java.util.UUID;
+
 @Repository
-public interface UserRepository extends CassandraRepository<User> {
-    @Query("select email, password from users where email = ?0")
+public interface UserRepository extends CrudRepository<User, UUID> {
     User findByEmail(String email);
 }
