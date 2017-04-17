@@ -10,6 +10,6 @@ import java.util.UUID;
 
 @Repository
 public interface UserRoleRepository extends CrudRepository<UserRole, UUID> {
-    @Query("select * from users_roles where email = ?0")
+    @Query(value = "select * from users_roles where email = ?0", nativeQuery = true)
     List<UserRole> findRolesByEmail(String email);
 }

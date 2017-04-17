@@ -13,6 +13,6 @@ import java.util.UUID;
  */
 @Repository
 public interface MovieRepository extends CrudRepository<Movie, UUID> {
-    @Query("select id, name, year_released, trailer_link from movies")
+    @Query(value = "select id, name, year_released, trailer_link from movies", nativeQuery = true)
     List<Movie> findAllMovieSummaries();
 }

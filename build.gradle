@@ -33,15 +33,14 @@ jar {
 }
 
 dependencies {
+    compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
-    compile "org.springframework.security:spring-security-web:4.0.4.RELEASE"
-    compile "org.springframework.security:spring-security-config:4.0.4.RELEASE"
+    compile "com.h2database:h2:1.4.194"
     compile "org.projectlombok:lombok:1.16.16"
     testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
 
     compile(group: 'org.springframework', name: 'spring-aspects', version: '4.2.4.RELEASE')
-    compile(group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.6')
     compile(group: 'org.aspectj', name: 'aspectjrt', version: '1.8.9')
     testCompile(group: 'com.novocode', name: 'junit-interface', version: '0.11')
     testCompile(group: 'org.mockito', name: 'mockito-core', version: '2.0.43-beta')
