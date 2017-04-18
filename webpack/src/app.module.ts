@@ -4,10 +4,12 @@ import {BrowserModule} from "@angular/platform-browser";
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {ROUTES} from "./app.routes";
+import {Hello} from "./components/hello.component";
 
 @NgModule({
     declarations: [
-        FilmFoxAppComponent
+        FilmFoxAppComponent,
+        Hello
     ],
     imports: [
         BrowserModule,
