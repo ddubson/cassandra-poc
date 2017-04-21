@@ -13,3 +13,6 @@ build/
 classes/
 node_modules/
 src/main/resources/static/bundle.js
+*.log
+/**/static/scripts
+webapp/test/bundle

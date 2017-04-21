@@ -1,19 +1,37 @@
-var path = require('path'),
-    srcPath = path.join(__dirname, 'webpack/src'),
-    outPath = path.join(__dirname, 'src/main/resources/static');
+var path = require('path')
 
 module.exports = {
-    entry: path.join(srcPath, 'main.ts'),
+    entry: {
+        "./src/main/resources/static/scripts/bundle": './webapp/src/main.ts',
+        "./webapp/test/bundle/testbundle": './webapp/test/test_index.js',
+    },
     output: {
-        path: outPath,
-        filename: 'bundle.js'
+        filename: '[name].js',
+        libraryTarget: 'var',
+        library: ''
     },
     resolve: {
+        modules: [
+            path.resolve(__dirname, 'webapp'),
+            'node_modules'
+        ],
         extensions: ['.js', '.ts']
     },
     module: {
         rules: [
-            {test: /\.[jt]s$/, exclude: /node_modules/, loaders: ["babel-loader", "ts-loader"]},
+            {
+                test: /\.[jt]s$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env']
+                }
+            },
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/
+            },
             {test: /\.css$/, loaders: 'style-loader!css-loader'}
         ]
     }
