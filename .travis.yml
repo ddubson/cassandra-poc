@@ -4,6 +4,7 @@ before_install:
   - if [[ `npm -v` != 4* ]]; then npm i -g npm@4; fi
   - nvm install 7.8.0
   - nvm use 7.8.0
+  - npm i -g karma karma-cli karma-jasmine karma-phantomjs-launcher jasmine-core phantomjs-prebuilt
 script: ./gradlew clean npm_install npmBuild npmTest build
 addons:
     code_climate:
