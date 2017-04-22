@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.fluentlenium.core.filter.FilterConstructor.withText;
 import static org.junit.Assert.assertTrue;
 
-public class IndexPageAcceptanceTest extends AcceptanceTest {
+public class HomePageAcceptanceTest extends AcceptanceTest {
     @Page
     HomePage homePage;
 

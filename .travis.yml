@@ -1,6 +1,6 @@
 language: java
 jdk: oraclejdk8
-script: ./gradlew clean npm_install npmBuild build
+script: ./gradlew clean npm_install npmBuild npmTest build
 addons:
     code_climate:
         repo_token: 2a51c2a4894be699e9adab5eea8e19006f71fa6109c48273ec3af7bf07556fcd
