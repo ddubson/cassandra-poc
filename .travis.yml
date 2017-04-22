@@ -1,5 +1,6 @@
 language: java
 jdk: oraclejdk8
+nodejs: "7"
 script: ./gradlew clean npm_install npmBuild npmTest build
 addons:
     code_climate:
