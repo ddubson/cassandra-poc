@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -13,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @SpringBootApplication
 @Component
-public class Application {
+public class FilmFoxApplication {
     @Value("${server.port}")
     int portBound;
 
@@ -21,7 +20,7 @@ public class Application {
     Logger sysLog;
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(FilmFoxApplication.class, args);
     }
 
     @EventListener

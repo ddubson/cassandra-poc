@@ -1,16 +1,19 @@
 package com.ddubson.filmfox.acceptance;
 
+import com.ddubson.filmfox.FilmFoxApplication;
 import org.fluentlenium.adapter.junit.FluentTest;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-@SpringBootTest
-public class AcceptanceTest extends FluentTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = FilmFoxApplication.class,webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+abstract public class AcceptanceTest extends FluentTest {
     @LocalServerPort
     int serverPort;
 
