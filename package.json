@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --progress",
     "watch": "webpack --progress --watch",
-    "test": "karma start webapp/test/karma.conf.js"
+    "test": "karma start webapp/test/karma.conf.js",
+    "testWatch": "karma start webapp/test/karma.conf.js --singleRun=false"
   },
   "repository": {
     "type": "git",

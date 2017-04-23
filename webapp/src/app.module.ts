@@ -5,11 +5,14 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {ROUTES} from "./app.routes";
 import {Hello} from "./components/hello.component";
+import {MovieList} from "./components/movies/movieList.component";
+import {MovieItem} from "./components/movies/movieItem.component";
 
 @NgModule({
     declarations: [
         FilmFoxAppComponent,
-        Hello
+        MovieList,
+        MovieItem
     ],
     imports: [
         BrowserModule,
