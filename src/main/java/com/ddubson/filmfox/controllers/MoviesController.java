@@ -34,7 +34,12 @@ public class MoviesController {
 
     @RequestMapping(value = "/movies", method = RequestMethod.POST)
     public Movie addMovie(@RequestBody Movie movieJson) {
-        return movieService.addMovie(new Movie());
+        Movie movie = Movie.builder()
+                .name(movieJson.getName())
+                .directedBy(movieJson.getDirectedBy())
+                .yearReleased(movieJson.getYearReleased())
+                .trailerLink(movieJson.getTrailerLink()).build();
+        return movieService.addMovie(movie);
     }
 
     @PostMapping("/movies/search")
