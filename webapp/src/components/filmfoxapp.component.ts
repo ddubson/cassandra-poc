@@ -6,6 +6,6 @@ import {Component} from "@angular/core";
         <router-outlet></router-outlet>
     `
 })
-export class FilmFoxAppComponent {
+export class FilmFoxApp {
 
 }

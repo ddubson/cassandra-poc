@@ -2,8 +2,6 @@ package com.ddubson.filmfox.controllers;
 
 import com.ddubson.filmfox.models.Movie;
 import com.ddubson.filmfox.services.movie.MovieService;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,15 +12,9 @@ import java.util.UUID;
 @RestController
 public class MoviesController {
     @Autowired
-    Logger sysLog;
-
-    @Autowired
     MovieService movieService;
 
-    @Autowired
-    ObjectMapper json;
-
-    @RequestMapping(value = "/movies", method = RequestMethod.GET)
+    @GetMapping("/movies")
     public List<Movie> listMovies() {
         return movieService.getMovieSummaries();
     }
