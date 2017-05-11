@@ -1,0 +1,17 @@
+server:
+  port: ${port:9000}
+
+# GZIP Filter Settings
+## Enables GZIP compression on response payloads
+server.compression:
+    enabled: true
+    mime-types: application/json
+
+spring.datasource:
+  url: jdbc:h2:mem:filmfox
+  username: dbuser
+  password: dbpass
+  driver-class-name: org.h2.Driver
+
+flyway:
+  locations: classpath:db/migration/schema, classpath:db/migration/data
