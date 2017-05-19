@@ -6,12 +6,16 @@ import {RouterModule} from "@angular/router";
 import {ROUTES} from "./app.routes";
 import {MovieList} from "./components/movies/movieList.component";
 import {MovieItem} from "./components/movies/movieItem.component";
+import {MovieService} from "./services/movie.service";
 
 @NgModule({
     declarations: [
         FilmFoxApp,
         MovieList,
         MovieItem
+    ],
+    providers: [
+        MovieService
     ],
     imports: [
         BrowserModule,
