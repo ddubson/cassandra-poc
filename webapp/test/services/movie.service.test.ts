@@ -1,18 +1,18 @@
 import {ReflectiveInjector} from "@angular/core";
 import {MovieService} from "../../src/services/movie.service";
-import {Http, ResponseOptions, Response} from "@angular/http";
-import {MockBackend, MockConnection} from "@angular/http/testing";
+import {Http, ResponseOptions, Response, RequestOptions, BaseRequestOptions, ConnectionBackend} from "@angular/http";
+import {MockBackend} from "@angular/http/testing";
 import {MovieFactory} from "../helpers/factories/movieFactory";
 import {Observable} from "rxjs/Observable";
+
 describe("Service: MovieService", () => {
     let http: Http, movieService: MovieService;
 
     beforeEach(() => {
         const injector = ReflectiveInjector.resolveAndCreate([
-            MovieService,
-            Http,
-            MockBackend,
-            MockConnection
+            {provide: ConnectionBackend, useClass: MockBackend},
+            {provide: RequestOptions, useClass: BaseRequestOptions},
+            Http, MovieService
         ]);
         http = injector.get(Http);
         movieService = injector.get(MovieService);

@@ -30,8 +30,12 @@ describe("Component: MovieList", () => {
         });
 
         it("should render all movies", () => {
-            const movie1 = new Movie("Pulp Fiction", 1994, "Quentin Tarantino");
-            const movie2 = new Movie("Goodfellas", 1990, "Martin Scorsese");
+            const movie1 = MovieFactory.build({
+                name: "Pulp Fiction",
+                yearReleased: 1994,
+                directedBy: "Quentin Tarantino"
+            });
+            const movie2 = MovieFactory.build({name: "GoodFellas", yearReleased: 1990, directedBy: "Martin Scorsese"});
 
             const component = fixtureHelper.getComponent();
             component.movies = [movie1, movie2];
