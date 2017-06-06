@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
-import {FilmFoxApp} from "./components/filmfoxapp.component";
+import {MovieList} from "./components/movies/movieList.component";
 
 export const ROUTES: Routes = [
-    {path: '', component: FilmFoxApp},
+    {path: '', component: MovieList},
 ];
