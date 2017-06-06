@@ -11,7 +11,10 @@ spring:
     url: jdbc:h2:mem:filmfox
     driver-class-name: org.h2.Driver
     platform: h2
+  jpa:
+    hibernate:
+      ddl-auto: none
 
 flyway:
   locations: classpath:db/migration/schema, classpath:db/migration/data
-  schemas: PUBLIC
+  schemas: filmfox

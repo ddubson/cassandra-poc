@@ -1,0 +1,7 @@
+applications:
+- name: film-fox
+  memory: 2G
+  host: filmfox
+  random-route: true
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  path: build/libs/film-fox-0.1-alpha.jar

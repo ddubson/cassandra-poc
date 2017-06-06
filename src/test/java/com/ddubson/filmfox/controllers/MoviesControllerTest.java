@@ -2,30 +2,36 @@ package com.ddubson.filmfox.controllers;
 
 import com.ddubson.filmfox.models.Movie;
 import com.ddubson.filmfox.repositories.MovieRepository;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(MoviesController.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 public class MoviesControllerTest {
-    @Autowired
     MockMvc mockMvc;
-
-    @MockBean
     MovieRepository movieRepository;
+    MoviesController moviesController;
+
+    @Before
+    public void setUp() {
+        this.movieRepository = mock(MovieRepository.class);
+        this.moviesController = new MoviesController(movieRepository);
+        this.mockMvc = MockMvcBuilders.standaloneSetup(moviesController).build();
+    }
 
     @Test
     public void getMovieSummaries_ReturnsAllMovieSummaries() throws Exception {

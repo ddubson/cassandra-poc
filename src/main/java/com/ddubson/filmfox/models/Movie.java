@@ -1,7 +1,9 @@
 package com.ddubson.filmfox.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,6 +11,8 @@ import javax.persistence.*;
 @Table(name="movies")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Movie {
     @Id
     @GeneratedValue

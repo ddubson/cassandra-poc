@@ -24,7 +24,7 @@
         <appender-ref ref="STDOUT" />
     </logger>
 
-    <logger name="org.flywaydb" level="DEBUG">
+    <logger name="org.flywaydb" level="ERROR">
         <appender-ref ref="STDOUT" />
     </logger>
 
