@@ -30,6 +30,7 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'com.moowork.node'
+apply plugin: 'jacoco'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -49,6 +50,13 @@ task npmWatch(type: NpmTask) {
 
 task npmTest(type: NpmTask) {
     args = ['run','test']
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
 }
 
 dependencies {
