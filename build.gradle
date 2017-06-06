@@ -1,5 +1,5 @@
 ext {
-    springBootVersion = "1.5.2.RELEASE"
+    springBootVersion = "1.5.3.RELEASE"
 }
 
 repositories {
@@ -9,7 +9,7 @@ repositories {
 
 buildscript {
     ext {
-        springBootVersion = "1.5.2.RELEASE"
+        springBootVersion = "1.5.3.RELEASE"
     }
 
     repositories {
@@ -55,10 +55,9 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
-    compile "com.h2database:h2:1.4.194"
+    runtime "com.h2database:h2"
     compile "org.projectlombok:lombok:1.16.16"
-    compile(group: 'org.springframework', name: 'spring-aspects', version: '4.2.4.RELEASE')
-    compile(group: 'org.aspectj', name: 'aspectjrt', version: '1.8.9')
+    compile "org.flywaydb:flyway-core:4.2.0"
 
     testCompile 'org.fluentlenium:fluentlenium-junit:3.2.0'
     testCompile 'org.fluentlenium:fluentlenium-assertj:3.2.0'
