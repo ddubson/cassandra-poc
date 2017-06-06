@@ -10,4 +10,5 @@ addons:
     code_climate:
         repo_token: 2a51c2a4894be699e9adab5eea8e19006f71fa6109c48273ec3af7bf07556fcd
 after_success:
+  - ./gradlew codeCoverageReport
   - bash <(curl -s https://codecov.io/bash) -t bcdf1e83-880a-44b6-b6b4-02f4926933e3
