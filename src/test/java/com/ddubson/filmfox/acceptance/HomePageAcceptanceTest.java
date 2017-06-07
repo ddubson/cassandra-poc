@@ -10,7 +10,8 @@ public class HomePageAcceptanceTest extends AcceptanceTest {
 
     @Test
     public void whenIndexPageLoads_itShouldDisplayAllMovies() {
-
+        homePage.go();
+        find("movie-list").present();
     }
 
 }
