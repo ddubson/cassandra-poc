@@ -27,9 +27,11 @@
     "@angular/router": "^4.0.2",
     "babel-polyfill": "^6.23.0",
     "intl": "^1.2.5",
+    "ng2-semantic-ui": "^0.9.2",
+    "ngx-bootstrap": "^1.7.1",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.3.0",
-    "typescript": "^2.2.2",
+    "typescript": "2.3.4",
     "zone.js": "^0.8.5"
   },
   "devDependencies": {

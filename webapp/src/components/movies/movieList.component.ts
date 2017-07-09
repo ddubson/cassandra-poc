@@ -5,10 +5,12 @@ import {MovieService} from "../../services/movie.service";
 @Component({
     selector: 'movie-list',
     template: `
-        <div>
-            <div>Movies</div>
-            <div>
-                <movie-item *ngFor="let movie of movies" [movie]="movie"></movie-item>
+        <div class="panel panel-primary">
+            <h3 class="panel-heading">Movies</h3>
+            <div class="panel-body">
+                <div class="list-group">
+                    <movie-item *ngFor="let movie of movies" [movie]="movie"></movie-item>
+                </div>
             </div>
         </div>
     `

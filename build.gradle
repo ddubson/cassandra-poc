@@ -1,5 +1,5 @@
 ext {
-    springBootVersion = "1.5.3.RELEASE"
+    springBootVersion = "1.5.4.RELEASE"
 }
 
 repositories {
@@ -9,7 +9,7 @@ repositories {
 
 buildscript {
     ext {
-        springBootVersion = "1.5.3.RELEASE"
+        springBootVersion = "1.5.4.RELEASE"
     }
 
     repositories {
@@ -41,16 +41,20 @@ jar {
 }
 
 task npmBuild(type: NpmTask) {
-    args = ['run','build']
+    args = ['run', 'build']
 }
 
 task npmWatch(type: NpmTask) {
-    args = ['run','watch']
+    args = ['run', 'watch']
 }
 
-task npmTest(type: NpmTask) {
-    args = ['run','test']
+task npmTest(type: NpmTask, dependsOn: npmBuild) {
+    args = ['run', 'test']
 }
+
+build.dependsOn(npmBuild)
+test.dependsOn(npmBuild)
+test.finalizedBy npmTest
 
 jacocoTestReport {
     reports {

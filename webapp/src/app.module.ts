@@ -8,10 +8,12 @@ import {MovieList} from "./components/movies/movieList.component";
 import {MovieItem} from "./components/movies/movieItem.component";
 import {MovieService} from "./services/movie.service";
 import {HttpModule} from "@angular/http";
+import {TopNav} from "./components/topNav.component";
 
 @NgModule({
     declarations: [
         FilmFoxApp,
+        TopNav,
         MovieList,
         MovieItem
     ],

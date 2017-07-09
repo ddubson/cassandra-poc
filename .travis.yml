@@ -5,7 +5,7 @@ before_install:
   - nvm install 7.8.0
   - nvm use 7.8.0
   - npm i -g karma karma-cli karma-jasmine karma-phantomjs-launcher jasmine-core phantomjs-prebuilt
-script: ./gradlew clean npm_install npmBuild npmTest build
+script: ./gradlew clean npm_install test
 addons:
     code_climate:
         repo_token: 2a51c2a4894be699e9adab5eea8e19006f71fa6109c48273ec3af7bf07556fcd
